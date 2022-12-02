@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "348911727195",
+    "project_id": "xchanger-53fc9",
+    "storage_bucket": "xchanger-53fc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348911727195:android:f369b32aaf047f69f2c57e",
+        "android_client_info": {
+          "package_name": "com.atoms.xchanger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348911727195-cuig9jlq3i2pcjsgov77q01k7eb7hj48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-ZYreum8wcchZihWloSC7tvyJHTaxfsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348911727195-cuig9jlq3i2pcjsgov77q01k7eb7hj48.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "348911727195-d6j3tqoi5i2fpdipaqhkc980aslp1hfs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.atoms.xchanger"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
