@@ -13,7 +13,7 @@ import '../../cubit/auth_cubit/register_cubit.dart';
 import '../overview_screen/user_cash_widget.dart';
 
 class UserSignUpScreen extends StatefulWidget {
-  UserSignUpScreen({Key? key}) : super(key: key);
+  const UserSignUpScreen({Key? key}) : super(key: key);
 
   @override
   State<UserSignUpScreen> createState() => _UserSignUpScreenState();
@@ -177,7 +177,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         borderRadius: BorderRadius.circular(100),
                         child: Center(
                           child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 5),
+                              padding: const EdgeInsets.symmetric(vertical: 5),
                               child: RichText(
                                 text: TextSpan(
                                   text: 'Already have an account? ',
@@ -194,7 +194,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                               )),
                         ),
                       ),
-                      SizedBox(height: 50)
+                      const SizedBox(height: 50)
                     ],
                   ),
                 );
