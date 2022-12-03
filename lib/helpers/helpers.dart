@@ -59,7 +59,9 @@ Widget profileImage({required BuildContext context}) {
           radius: 20,
           backgroundColor: GlobalColors.primaryGreen,
           child: state.profilePic == null
-              ? Text(state.profileModel!.userDetails.firstName[0].toUpperCase(),
+              ? Text(
+                  state.profileModel?.userDetails.firstName[0].toUpperCase() ??
+                      'J',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,
