@@ -45,7 +45,7 @@ class OverviewScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        UserCashWidget(
+                        const UserCashWidget(
                             inActiveImage: 'user_inactive.svg',
                             activeImage: 'user_active.svg',
                             title: 'User',
@@ -54,7 +54,7 @@ class OverviewScreen extends StatelessWidget {
                             userRole: 'user'),
                         SizedBox(
                             width: GlobalSizes.globalWidth(context, 0.025)),
-                        UserCashWidget(
+                        const UserCashWidget(
                             inActiveImage: 'cash_inactive.svg',
                             activeImage: 'cash_active.svg',
                             title: 'Cash Vendor',

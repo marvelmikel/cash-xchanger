@@ -13,7 +13,7 @@ import '../../book_cash_screen.dart';
 import '../denomination_in_custody_widget.dart';
 
 class RequestWidget extends StatefulWidget {
-  RequestWidget({
+  const RequestWidget({
     Key? key,
   }) : super(key: key);
 
@@ -38,13 +38,13 @@ class _RequestWidgetState extends State<RequestWidget> {
                     Container(
                       width: double.infinity,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 20),
-                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.only(left: 20),
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade200,
-                              offset: Offset(0.0, 1.0), //(x,y)
+                              offset: const Offset(0.0, 1.0), //(x,y)
                               blurRadius: 6.0,
                             ),
                           ],
@@ -59,7 +59,7 @@ class _RequestWidgetState extends State<RequestWidget> {
                           GestureDetector(
                             onTap: () => reveal.value = true,
                             child: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: GlobalColors.primaryBlue),

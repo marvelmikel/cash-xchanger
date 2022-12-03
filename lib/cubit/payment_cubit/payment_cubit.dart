@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../api_service/notifications_api/notification_api.dart';
 import '../../api_service/payments_api/bank_service_api.dart';
-import '../../api_service/payments_api/list_of_card_api.dart';
 import '../../api_service/payments_api/top_up_api.dart';
-import '../../api_service/security/security_api.dart';
 import '../../database/models/banks_model/bank_info_model.dart';
-import '../../database/models/banks_model/bank_model.dart';
-import '../../database/models/cards_model/card_model.dart';
-import '../../database/models/notifications_model/notification_model.dart';
 import '../../database/models/profile_model/profile_model.dart';
 import '../../database/shared_preferences/temp_database.dart';
 

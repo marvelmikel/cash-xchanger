@@ -81,14 +81,14 @@ class ImageWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: SvgPicture.asset('assets/images/$imagePath', height: 22),
             decoration: BoxDecoration(
               color: GlobalColors.primaryGreen.withAlpha(70),
               shape: BoxShape.circle,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             imageTitle,
             style: GlobalTextStyles.blueMediumText(

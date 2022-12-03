@@ -1,6 +1,5 @@
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:cash_xchanger/ui/global_widgets/profile_back_button.dart';
-import 'package:cash_xchanger/ui/global_widgets/profile_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

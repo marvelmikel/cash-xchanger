@@ -1,4 +1,3 @@
-import 'package:cash_xchanger/helpers/sizes.dart';
 import 'package:flutter/material.dart';
 
 import 'colors.dart';

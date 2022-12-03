@@ -47,13 +47,13 @@ class GlobalRouter {
 
       case Routes.signUpScreen:
         return PageTransition(
-            child: UserSignUpScreen(),
+            child: const UserSignUpScreen(),
             type: PageTransitionType.fade,
             settings: settings);
 
       case Routes.loginScreen:
         return PageTransition(
-            child: LoginScreen(),
+            child: const LoginScreen(),
             type: PageTransitionType.fade,
             settings: settings);
 
@@ -72,7 +72,7 @@ class GlobalRouter {
       // Vendor screen
       case Routes.vendorDashboard:
         return PageTransition(
-            child: VendorDashboard(),
+            child: const VendorDashboard(),
             type: PageTransitionType.fade,
             settings: settings);
 

@@ -125,8 +125,8 @@ class _CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
-      margin: EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+      margin: const EdgeInsets.only(right: 10),
       decoration:
           BoxDecoration(color: color, borderRadius: BorderRadius.circular(10)),
       child: Column(
@@ -148,7 +148,7 @@ class _CardWidget extends StatelessWidget {
                           color: GlobalColors.globalWhite,
                           fontSize: 18),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Text(
                       cardNumber.substring(0, 4),
                       style: GlobalTextStyles.regularTextWhite(

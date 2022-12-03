@@ -58,7 +58,7 @@ class _RequestCashScreenState extends State<RequestCashScreen> {
         builder: (context, values, child) {
           var changeCards = values[0];
           var showMap = values[1];
-          print(changeCards);
+          debugPrint(changeCards);
           return Scaffold(
             backgroundColor: GlobalColors.globalWhite,
             body: Stack(
@@ -71,7 +71,7 @@ class _RequestCashScreenState extends State<RequestCashScreen> {
                       if (_origin != null) _origin!,
                       if (_destination != null) _destination!,
                     }),
-                changeCards ? RequestWidget() : EnRouteWidget(),
+                changeCards ? const RequestWidget() : const EnRouteWidget(),
                 Hero(
                   tag: 'reveal',
                   child: GestureDetector(

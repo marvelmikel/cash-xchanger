@@ -71,7 +71,7 @@ class _UploadLicenseBottomSheetState extends State<UploadLicenseBottomSheet> {
                               'Card or Voter’s card',
                               style: GlobalTextStyles.blueMediumTextB(
                                   context: context, fontSize: 20)),
-                          SizedBox(height: 20),
+                          const SizedBox(height: 20),
                           Text(
                               'Pleas make sure that the names on the ID Card '
                               'are correct for proper verification sake',

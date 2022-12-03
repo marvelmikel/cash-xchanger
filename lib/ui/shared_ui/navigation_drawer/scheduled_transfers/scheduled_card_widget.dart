@@ -14,7 +14,7 @@ class ScheduledCardsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.only(top: 20, left: 30, right: 30),
+        padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
         decoration: BoxDecoration(
             color: GlobalColors.globalWhite,
             borderRadius:
@@ -101,16 +101,16 @@ class ScheduleCardItem extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(width: 20),
+        const SizedBox(width: 20),
         Container(
           height: 185,
           width: 0.5,
           color: GlobalColors.primaryBlack.withAlpha(50),
         ),
-        SizedBox(width: 20),
+        const SizedBox(width: 20),
         Expanded(
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
                 color: GlobalColors.ashWhite,
                 borderRadius: BorderRadius.circular(20)),
@@ -122,22 +122,22 @@ class ScheduleCardItem extends StatelessWidget {
                   style: GlobalTextStyles.blueMediumText(
                       context: context, fontSize: 18),
                 ),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
                 Text(
                   'Type: ${scheduleModule.type} notes',
                   style: GlobalTextStyles.blueMediumText(
                       context: context, fontSize: 14),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 10,
                       backgroundImage: NetworkImage(
                         'https://picsum.photos/250?image=9',
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Text(
                       scheduleModule.name,
                       maxLines: 1,
@@ -147,12 +147,12 @@ class ScheduleCardItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     SvgPicture.asset('assets/images/location_pin.svg',
                         color: GlobalColors.primaryBlack),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Flexible(
                       child: Text(
                         scheduleModule.address,

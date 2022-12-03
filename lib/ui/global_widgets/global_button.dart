@@ -1,7 +1,6 @@
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class GlobalButton extends StatelessWidget {
   const GlobalButton(

@@ -35,11 +35,11 @@ class _HomePageState extends State<HomePage> {
               getItInstance<TempDataBaseImpl>().getUserData());
         }
         return getItInstance<TempDataBaseImpl>().getUserData().isEmpty
-            ? OnboardScreen()
+            ? const OnboardScreen()
             : userData.userDetails.userRole == 'user'
                 ? const UserDashBoardScreen()
                 : userData.userDetails.isDocumentVerified
-                    ? VendorDashboard()
+                    ? const VendorDashboard()
                     : VendorWelcomeScreen(vendorData: [
                         userData.userDetails.username,
                         userData.userDetails.email

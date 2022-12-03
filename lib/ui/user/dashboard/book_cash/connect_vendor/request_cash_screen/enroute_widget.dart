@@ -15,7 +15,7 @@ import '../../book_cash_screen.dart';
 import '../denomination_in_custody_widget.dart';
 
 class EnRouteWidget extends StatefulWidget {
-  EnRouteWidget({
+  const EnRouteWidget({
     Key? key,
   }) : super(key: key);
 
@@ -47,7 +47,7 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade200,
-                              offset: Offset(0.0, 1.0), //(x,y)
+                              offset: const Offset(0.0, 1.0), //(x,y)
                               blurRadius: 6.0,
                             ),
                           ],
@@ -62,7 +62,7 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                           GestureDetector(
                             onTap: () => reveal.value = true,
                             child: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: GlobalColors.primaryBlue),
@@ -84,7 +84,7 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade200,
-                              offset: Offset(0.0, 1.0), //(x,y)
+                              offset: const Offset(0.0, 1.0), //(x,y)
                               blurRadius: 6.0,
                             ),
                           ],
@@ -168,7 +168,7 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                                         path: state.tempCashModel!
                                             .nearestVendors.phoneNumber,
                                       );
-                                      launch(launchUri.toString());
+                                      launchUrl(launchUri);
                                     },
                                     child: SvgPicture.asset(
                                         'assets/images/call_icon.svg',
@@ -182,7 +182,7 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                                         path: state.tempCashModel!
                                             .nearestVendors.phoneNumber,
                                       );
-                                      launch(launchUri.toString());
+                                      launchUrl(launchUri);
                                     },
                                     child: SvgPicture.asset(
                                         'assets/images/message_icon.svg',
@@ -275,7 +275,7 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                             onTap: () => showDialog(
                                 context: context,
                                 builder: (context) {
-                                  return ConfirmDeliveryDialog();
+                                  return const ConfirmDeliveryDialog();
                                 }),
                           ),
                           const SizedBox(height: 20),

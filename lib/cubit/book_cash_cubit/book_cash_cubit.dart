@@ -1,10 +1,8 @@
 import 'dart:convert';
 
-import 'package:cash_xchanger/cubit/profile_cubit/profile_cubit.dart';
 import 'package:cash_xchanger/database/models/profile_model/profile_model.dart';
 import 'package:cash_xchanger/database/models/transaction_history_and_balance_model/transaction_balance_model.dart';
 import 'package:cash_xchanger/dependency/get_it.dart';
-import 'package:cash_xchanger/helpers/helpers.dart';
 import 'package:cash_xchanger/navigation/navigation_service.dart';
 import 'package:cash_xchanger/navigation/routes.dart';
 import 'package:flutter/material.dart';
@@ -163,6 +161,17 @@ class BookCashCubit extends Cubit<BookCashState> {
         'meetup_location': meetUpLocation.value,
         'cash_type': cashType.value ? 'stable' : 'mint',
         'cash_summary': '{'
+            '"cash_amount": ${state.amount},'
+            '"cash_type": "${cashType.value ? 'stable' : 'mint'}]",'
+            '"denominations": '
+            '{"fifty": ${state.fiftyNaira},'
+            '"hundred": ${state.hundredNaira},'
+            '"two_hundred": ${state.twoHundredNaira},'
+            '"five_hundred": ${state.fiveHundredNaira},'
+            '"one_thousand": ${state.oneThousandNaira}}}'
+      };
+/**
+ * '{'
             '\"cash_amount\": ${state.amount},'
             '\"cash_type\": \"${cashType.value ? 'stable' : 'mint'}]\",'
             '\"denominations\": '
@@ -171,8 +180,7 @@ class BookCashCubit extends Cubit<BookCashState> {
             '\"two_hundred\": ${state.twoHundredNaira},'
             '\"five_hundred\": ${state.fiveHundredNaira},'
             '\"one_thousand\": ${state.oneThousandNaira}}}'
-      };
-
+ */
       nearbyVendorApiServiceImpl
           .searchNearbyVendors(
               email: profileModelFromMap(tempDataBaseImpl.getUserData())
@@ -208,13 +216,13 @@ class BookCashCubit extends Cubit<BookCashState> {
         'cash_amount': bookCashState.amount,
         'date_time': DateTime.now().toString(),
         'cash_summary': '{'
-            '\"cash_amount\": ${bookCashState.amount},'
-            '\"denominations\": '
-            '{\"fifty\": ${bookCashState.fiftyNaira},'
-            '\"hundred\": ${bookCashState.hundredNaira},'
-            '\"two_hundred\": ${bookCashState.twoHundredNaira},'
-            '\"five_hundred\": ${bookCashState.fiveHundredNaira},'
-            '\"one_thousand\": ${bookCashState.oneThousandNaira}}}'
+            '"cash_amount": ${bookCashState.amount},'
+            '"denominations": '
+            '{"fifty": ${bookCashState.fiftyNaira},'
+            '"hundred": ${bookCashState.hundredNaira},'
+            '"two_hundred": ${bookCashState.twoHundredNaira},'
+            '"five_hundred": ${bookCashState.fiveHundredNaira},'
+            '"one_thousand": ${bookCashState.oneThousandNaira}}}'
       };
       nearbyVendorApiServiceImpl.scheduleDeliveryLater(
           context: context, cashData: cashData);

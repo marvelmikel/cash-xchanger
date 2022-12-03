@@ -13,7 +13,7 @@ import 'enter_pin_keypad_buttons.dart';
 import 'pin_text_field_widget.dart';
 
 class EnterPinScreen extends StatelessWidget {
-  EnterPinScreen({Key? key, required this.amount}) : super(key: key);
+  const EnterPinScreen({Key? key, required this.amount}) : super(key: key);
 
   final String amount;
 
@@ -30,7 +30,7 @@ class EnterPinScreen extends StatelessWidget {
                 const BackButtonWidget(backButtonText: 'Enter pin'),
                 const SizedBox(height: 30),
                 Padding(
-                  padding: EdgeInsets.only(left: 20, right: 100),
+                  padding: const EdgeInsets.only(left: 20, right: 100),
                   child: Text(
                     'Input your transaction pin',
                     style: GlobalTextStyles.regularGreenText(
@@ -42,11 +42,11 @@ class EnterPinScreen extends StatelessWidget {
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 40),
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
                     decoration: BoxDecoration(
                         color: GlobalColors.globalWhite,
                         borderRadius:
-                            BorderRadius.vertical(top: Radius.circular(20))),
+                            const BorderRadius.vertical(top: Radius.circular(20))),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

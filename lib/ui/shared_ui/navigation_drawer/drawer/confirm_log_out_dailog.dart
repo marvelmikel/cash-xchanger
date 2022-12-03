@@ -22,7 +22,7 @@ class _ConfirmLogoutDialogState extends State<ConfirmLogoutDialog> {
       child: Container(
         alignment: Alignment.center,
         margin: const EdgeInsets.symmetric(vertical: 280, horizontal: 50),
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20), color: Colors.white),
         child: Column(

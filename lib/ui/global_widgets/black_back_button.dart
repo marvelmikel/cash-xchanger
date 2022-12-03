@@ -23,7 +23,7 @@ class BlackBackButtonWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
                 onTap: () => Navigator.pop(context),
                 child: Container(
-                    margin: EdgeInsets.only(left: 5),
+                    margin: const EdgeInsets.only(left: 5),
                     height: 40,
                     width: 40,
                     child: Icon(Icons.arrow_back_ios,

@@ -1,7 +1,6 @@
 import 'package:cash_xchanger/cubit/profile_cubit/profile_cubit.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
-import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:cash_xchanger/ui/global_widgets/back_button.dart';
 import 'package:cash_xchanger/ui/global_widgets/box_text_widget.dart';
 import 'package:flutter/material.dart';
@@ -29,14 +28,14 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
               const SizedBox(height: 10),
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.only(top: 30),
-                  padding: EdgeInsets.symmetric(vertical: 35, horizontal: 20),
+                  margin: const EdgeInsets.only(top: 30),
+                  padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 20),
                   height: double.infinity,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       color: GlobalColors.globalWhite,
                       borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(20))),
+                          const BorderRadius.vertical(top: Radius.circular(20))),
                   child: Column(
                     children: [
                       Row(
@@ -48,7 +47,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
                               keyBoardType: TextInputType.name,
                             ),
                           ),
-                          SizedBox(width: 25),
+                          const SizedBox(width: 25),
                           Expanded(
                             child: BoxEditText(
                               fieldName: 'Lastname',
@@ -58,19 +57,19 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
                       BoxEditText(
                         fieldName: 'Username',
                         hint: state.profileModel!.userDetails.username,
                         keyBoardType: TextInputType.name,
                       ),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
                       BoxEditText(
                         fieldName: 'Email',
                         hint: state.profileModel!.userDetails.email,
                         keyBoardType: TextInputType.emailAddress,
                       ),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
                       BoxEditText(
                         fieldName: 'Phone Number',
                         hint: state.profileModel!.userDetails.phoneNumber,

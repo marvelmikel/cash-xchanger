@@ -2,7 +2,6 @@ import 'package:cash_xchanger/api_service/profile_api/profile_details_api.dart';
 import 'package:cash_xchanger/api_service/transactions_api/transaction_api.dart';
 import 'package:cash_xchanger/database/models/profile_model/profile_model.dart';
 import 'package:cash_xchanger/database/models/vendor_rating_model/vendor_rating_model.dart';
-import 'package:cash_xchanger/ui/vendor/upload_doc/upload_photo_bottomsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -58,7 +58,7 @@ class DenominationItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 18),
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 18),
             decoration: BoxDecoration(
               color: GlobalColors.purpleBlue.withAlpha(50),
               borderRadius: BorderRadius.circular(10),

@@ -20,7 +20,7 @@ class BoxEditText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       decoration: BoxDecoration(
           color: GlobalColors.ashWhite,
           borderRadius: BorderRadius.circular(15)),
@@ -48,7 +48,7 @@ class BoxEditText extends StatelessWidget {
               hintStyle: TextStyle(color: Colors.black.withBlue(60)),
               isDense: true,
               contentPadding:
-                  EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                  const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(color: Colors.transparent)),
@@ -57,7 +57,7 @@ class BoxEditText extends StatelessWidget {
                   borderSide: const BorderSide(color: Colors.red)),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.transparent),
+                borderSide: const BorderSide(color: Colors.transparent),
               ),
             ),
             validator: (value) {
@@ -75,6 +75,7 @@ class BoxEditText extends StatelessWidget {
               } else {
                 return null;
               }
+              return null;
             },
           ),
         ],

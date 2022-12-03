@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -37,7 +38,9 @@ class TopUpImpl implements TopUpService {
         'remarks': 'paying self'
       };
 
-      print(data);
+      if (kDebugMode) {
+        print(data);
+      }
 
       var encodeToJson = jsonEncode(data);
 
@@ -51,7 +54,7 @@ class TopUpImpl implements TopUpService {
         throw TimeoutException(errorMessage);
       });
 
-      print('Respnse: ${_response.body}');
+      debugPrint('Respnse: ${_response.body}');
 
       if (_response.statusCode == 201) {
         Navigator.pop(context);

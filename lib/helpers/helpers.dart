@@ -5,7 +5,6 @@ import 'package:cash_xchanger/cubit/profile_cubit/profile_cubit.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -99,7 +98,7 @@ profileImageX({required BuildContext context, required String email}) {
         clipBehavior: Clip.none,
         children: [
           Container(
-            padding: EdgeInsets.all(1),
+            padding: const EdgeInsets.all(1),
             decoration: BoxDecoration(
                 color: GlobalColors.ashWhite, shape: BoxShape.circle),
             child: CircleAvatar(

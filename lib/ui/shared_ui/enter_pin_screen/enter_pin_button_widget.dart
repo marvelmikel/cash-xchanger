@@ -1,6 +1,5 @@
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:rive/rive.dart';
 
 final pinKeypadEquation = ValueNotifier('');
 final inputText = ValueNotifier('');

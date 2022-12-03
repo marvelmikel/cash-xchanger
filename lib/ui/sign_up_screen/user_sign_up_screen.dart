@@ -56,7 +56,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         style: GlobalTextStyles.blueBoldText(
                             context: context, fontSize: 32),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         'as cash $value',
                         style: GlobalTextStyles.blueBoldText(
@@ -109,7 +109,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                             AnimatedContainer(
                                 duration: const Duration(seconds: 1),
                                 curve: Curves.fastOutSlowIn,
-                                padding: EdgeInsets.all(2),
+                                padding: const EdgeInsets.all(2),
                                 height: 25,
                                 width: 25,
                                 decoration: BoxDecoration(
@@ -125,7 +125,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                                     ? SvgPicture.asset(
                                         'assets/images/tick_icon.svg',
                                         height: 15)
-                                    : SizedBox.shrink()),
+                                    : const SizedBox.shrink()),
                             const SizedBox(width: 20),
                             RichText(
                               text: TextSpan(
@@ -137,7 +137,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                                       text: 'terms',
                                       style: GlobalTextStyles.blueBoldText(
                                           context: context, fontSize: 16)),
-                                  TextSpan(text: ' and '),
+                                  const TextSpan(text: ' and '),
                                   TextSpan(
                                       text: 'policies',
                                       style: GlobalTextStyles.blueBoldText(

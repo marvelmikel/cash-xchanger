@@ -14,7 +14,7 @@ var baseImage = ValueNotifier('');
 var imageBytes = ValueNotifier<List<int>>([]);
 
 class UploadPhotoBottomSheet extends StatefulWidget {
-  UploadPhotoBottomSheet({Key? key, required this.email}) : super(key: key);
+  const UploadPhotoBottomSheet({Key? key, required this.email}) : super(key: key);
 
   final String email;
 

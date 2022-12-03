@@ -1,7 +1,6 @@
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:fade_shimmer/fade_shimmer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../cubit/payment_cubit/payment_cubit.dart';
@@ -115,7 +114,7 @@ class _SearchContentState extends State<SearchContent> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 40),
+                    const SizedBox(height: 40),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
@@ -144,7 +143,7 @@ class _SearchContentState extends State<SearchContent> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 40),
+                    const SizedBox(height: 40),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [

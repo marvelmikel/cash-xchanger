@@ -11,7 +11,7 @@ class PinTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
         valueListenable: inputText,
-        builder: (Context, String textValue, child) {
+        builder: (context, String textValue, child) {
           return Padding(
             padding: const EdgeInsets.only(top: 50),
             child: Row(
@@ -38,7 +38,7 @@ class PinItem extends StatelessWidget {
     return Container(
       width: 60,
       height: 60,
-      padding: EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: 8),
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(

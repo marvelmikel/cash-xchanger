@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class ReadNotificationScreen extends StatelessWidget {
-  ReadNotificationScreen({Key? key, required this.userNotification})
+  const ReadNotificationScreen({Key? key, required this.userNotification})
       : super(key: key);
 
   final UserNotification userNotification;
@@ -27,7 +27,7 @@ class ReadNotificationScreen extends StatelessWidget {
                 SizedBox(height: 3.h),
                 Text(userNotification.content,
                     style: GlobalTextStyles.regularText(context: context)),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(userNotification.notificationDate,
                     style: GlobalTextStyles.regularText(
                         context: context, fontSize: 12, alpha: 100)),

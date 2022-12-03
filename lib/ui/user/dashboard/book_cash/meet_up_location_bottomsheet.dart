@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../global_widgets/global_text_field.dart';
 
 class MeetUpLocationBottomSheet extends StatefulWidget {
-  MeetUpLocationBottomSheet({Key? key}) : super(key: key);
+  const MeetUpLocationBottomSheet({Key? key}) : super(key: key);
 
   @override
   State<MeetUpLocationBottomSheet> createState() =>
@@ -46,7 +46,7 @@ class _MeetUpLocationBottomSheetState extends State<MeetUpLocationBottomSheet> {
                     removeSpace: false,
                     textController: locationController),
               ),
-              SizedBox(height: 90),
+              const SizedBox(height: 90),
               GlobalButton(
                   buttonText: 'Continue',
                   onTap: () {

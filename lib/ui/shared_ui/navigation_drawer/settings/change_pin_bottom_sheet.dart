@@ -3,7 +3,6 @@ import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../cubit/nav_bar_cubit/nav_drawer_cubit.dart';

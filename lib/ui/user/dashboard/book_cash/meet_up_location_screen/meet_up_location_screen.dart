@@ -118,7 +118,7 @@ class MeetUpLocationScreen extends StatelessWidget {
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,
                                 builder: (context) =>
-                                    MeetUpLocationBottomSheet()),
+                                    const MeetUpLocationBottomSheet()),
                             child: Container(
                                 width: double.infinity,
                                 margin: const EdgeInsets.symmetric(
@@ -138,7 +138,7 @@ class MeetUpLocationScreen extends StatelessWidget {
                                           GlobalTextStyles.regularMediumWhiteH(
                                               context: context),
                                     ),
-                                    SizedBox(height: 5),
+                                    const SizedBox(height: 5),
                                     Text(
                                       'Tell us where you want your cash delivered',
                                       style: GlobalTextStyles.regularTextWhite(

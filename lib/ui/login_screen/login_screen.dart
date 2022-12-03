@@ -1,4 +1,3 @@
-import 'package:cash_xchanger/api_service/auth_api/login_api.dart';
 import 'package:cash_xchanger/cubit/auth_cubit/login_cubit.dart';
 import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
@@ -11,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -66,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       AnimatedContainer(
                           duration: const Duration(seconds: 1),
                           curve: Curves.fastOutSlowIn,
-                          padding: EdgeInsets.all(2),
+                          padding: const EdgeInsets.all(2),
                           height: 25,
                           width: 25,
                           decoration: BoxDecoration(
@@ -81,8 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: checkBoxState
                               ? SvgPicture.asset('assets/images/tick_icon.svg',
                                   height: 15)
-                              : SizedBox.shrink()),
-                      SizedBox(width: 20),
+                              : const SizedBox.shrink()),
+                      const SizedBox(width: 20),
                       Text(
                         'Remember me',
                         style: GlobalTextStyles.regularText(context: context),
@@ -109,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(100),
                   child: Center(
                     child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 5),
+                        padding: const EdgeInsets.symmetric(vertical: 5),
                         child: RichText(
                           text: TextSpan(
                             text: 'Don’t have an account? ',
