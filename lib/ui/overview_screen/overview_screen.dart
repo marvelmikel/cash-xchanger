@@ -70,23 +70,30 @@ class OverviewScreen extends StatelessWidget {
                         onTap: () => getItInstance<NavigationServiceImpl>()
                             .navigateTo(Routes.signUpScreen)),
                     SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),
-                    InkWell(
+                    GlobalButton(
+                      buttonText: 'Login',
+                      isButtonColorGreen: true,
+                      outLined: true,
+                      forground: GlobalColors.primaryBlue,
                       onTap: () => getItInstance<NavigationServiceImpl>()
                           .navigateTo(Routes.loginScreen),
-                      borderRadius: BorderRadius.circular(100),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 10),
-                        child: Text(
-                          'Login',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: GlobalSizes.globalWidth(context, 0.045),
-                              color: GlobalColors.primaryBlue),
-                        ),
-                      ),
                     ),
+                    // InkWell(
+                    //   onTap:
+                    //   borderRadius: BorderRadius.circular(100),
+                    //   child: Container(
+                    //     padding: const EdgeInsets.symmetric(
+                    //         vertical: 10, horizontal: 10),
+                    //     child: Text(
+                    //       'Login',
+                    //       textAlign: TextAlign.center,
+                    //       style: TextStyle(
+                    //           fontWeight: FontWeight.w700,
+                    //           fontSize: GlobalSizes.globalWidth(context, 0.045),
+                    //           color: GlobalColors.primaryBlue),
+                    //     ),
+                    //   ),
+                    // ),
                     SizedBox(height: GlobalSizes.globalHeight(context, 0.04)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),

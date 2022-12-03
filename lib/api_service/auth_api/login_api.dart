@@ -79,6 +79,7 @@ class LoginServiceImpl extends LoginApiService {
         getItInstance<NavigationServiceImpl>().pop();
       }
     } catch (_) {
+      debugPrint(_.toString());
       getItInstance<NavigationServiceImpl>().pop();
     }
   }

@@ -4,19 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class GlobalButton extends StatelessWidget {
-  const GlobalButton(
+  GlobalButton(
       {Key? key,
       required this.buttonText,
       this.isButtonColorGreen = false,
       this.horizontalMargin = 0,
       this.height = 60,
+      this.outLined = false,
+      this.isDisabled = false,
+      this.forground = Colors.white,
       required this.onTap})
       : super(key: key);
 
   final String buttonText;
   final bool isButtonColorGreen;
+  final bool outLined;
   final double horizontalMargin;
   final double height;
+  final Color forground;
+  final bool isDisabled;
   final Function() onTap;
 
   @override
@@ -29,18 +35,40 @@ class GlobalButton extends StatelessWidget {
         alignment: Alignment.center,
         width: GlobalSizes.globalWidth(context, 1),
         decoration: BoxDecoration(
-            color: isButtonColorGreen
-                ? GlobalColors.primaryGreen
-                : GlobalColors.primaryBlue,
-            borderRadius: BorderRadius.circular(10)),
+            color: backgroundSwitcher(
+                isDisabled: isDisabled,
+                isGreenButton: isButtonColorGreen,
+                outlined: outLined),
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+                color:
+                    outLined ? GlobalColors.primaryGreen : Colors.transparent,
+                width: 1.2)),
         child: Text(
           buttonText,
           style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 16,
-              color: GlobalColors.globalWhite),
+              fontWeight: FontWeight.w700, fontSize: 16, color: forground),
         ),
       ),
     );
   }
+
+  Color backgroundSwitcher({
+    required bool isDisabled,
+    required bool isGreenButton,
+    required bool outlined,
+  }) {
+    if (isDisabled) {
+      return GlobalColors.primaryGreen;
+    }
+    if (outLined) {
+      return Colors.transparent;
+    } else {
+      return isGreenButton
+          ? GlobalColors.primaryGreen
+          : GlobalColors.primaryBlue;
+    }
+  }
 }
+/// isButtonColorGreen
+               

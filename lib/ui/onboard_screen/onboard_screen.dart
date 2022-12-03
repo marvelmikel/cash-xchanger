@@ -71,12 +71,12 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              if (pageCount == 2)
-                GlobalButton(
-                  buttonText: 'Explore CX',
-                  onTap: () => getItInstance<NavigationServiceImpl>()
-                      .navigateTo(Routes.overViewScreen),
-                )
+                if (pageCount == 2)
+              GlobalButton(
+                buttonText: 'Explore CX',
+                onTap: () => getItInstance<NavigationServiceImpl>()
+                    .navigateTo(Routes.overViewScreen),
+              )
             ],
           ),
         ),
