@@ -27,7 +27,7 @@ class GlobalButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: !isDisabled ? onTap : null,
       child: Container(
         height: height,
         margin: EdgeInsets.symmetric(horizontal: horizontalMargin),

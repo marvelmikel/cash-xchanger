@@ -99,14 +99,14 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                           keyBoardType: TextInputType.name,
                           textController: passwordController),
                       SizedBox(height: GlobalSizes.globalHeight(context, 0.05)),
-                      InkWell(
-                        radius: 10,
-                        onTap: () =>
-                            setState(() => checkBoxState = !checkBoxState),
-                        child: Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          children: [
-                            AnimatedContainer(
+                      Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          InkWell(
+                            radius: 10,
+                            onTap: () =>
+                                setState(() => checkBoxState = !checkBoxState),
+                            child: AnimatedContainer(
                                 duration: const Duration(seconds: 1),
                                 curve: Curves.fastOutSlowIn,
                                 padding: const EdgeInsets.all(2),
@@ -126,32 +126,33 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                                         'assets/images/tick_icon.svg',
                                         height: 15)
                                     : const SizedBox.shrink()),
-                            const SizedBox(width: 20),
-                            RichText(
-                              text: TextSpan(
-                                text: 'I agree with ',
-                                style: GlobalTextStyles.regularText(
-                                    context: context),
-                                children: [
-                                  TextSpan(
-                                      text: 'terms',
-                                      style: GlobalTextStyles.blueBoldText(
-                                          context: context, fontSize: 16)),
-                                  const TextSpan(text: ' and '),
-                                  TextSpan(
-                                      text: 'policies',
-                                      style: GlobalTextStyles.blueBoldText(
-                                          context: context, fontSize: 16)),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                          ),
+                          const SizedBox(width: 20),
+                          RichText(
+                            text: TextSpan(
+                              text: 'I agree with ',
+                              style: GlobalTextStyles.regularText(
+                                  context: context),
+                              children: [
+                                TextSpan(
+                                    text: 'terms',
+                                    style: GlobalTextStyles.blueBoldText(
+                                        context: context, fontSize: 16)),
+                                const TextSpan(text: ' and '),
+                                TextSpan(
+                                    text: 'policies',
+                                    style: GlobalTextStyles.blueBoldText(
+                                        context: context, fontSize: 16)),
+                              ],
+                            ),
+                          )
+                        ],
                       ),
                       const SizedBox(height: 30),
                       GlobalButton(
                         buttonText: 'Create account',
                         isButtonColorGreen: true,
+                        isDisabled: !checkBoxState,
                         onTap: () {
                           if (formKey.validate) {
                             if (checkBoxState) {
