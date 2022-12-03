@@ -28,6 +28,7 @@ class _OnboardPageItemState extends State<OnboardPageItem> {
             duration: const Duration(milliseconds: 1000),
             curve: Curves.easeIn,
             child: SizedBox(
+
                 height: 450,
                 child: SvgPicture.asset('assets/images/${widget.imagePath}',
                     fit: BoxFit.cover)),

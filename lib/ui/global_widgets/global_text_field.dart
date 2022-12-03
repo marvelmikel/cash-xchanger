@@ -11,11 +11,13 @@ class GlobalTextField extends StatefulWidget {
   final bool isCenterText;
   final bool isEyeVisible;
   final bool removeSpace;
+
   final bool obscureText;
 
   const GlobalTextField(
       {Key? key,
       required this.fieldName,
+
       required this.keyBoardType,
       required this.textController,
       this.removeSpace = true,
@@ -24,6 +26,8 @@ class GlobalTextField extends StatefulWidget {
       this.isEyeVisible = false,
       this.maxLength = 35})
       : super(key: key);
+
+
 
   @override
   State<GlobalTextField> createState() => _GlobalTextFieldState();

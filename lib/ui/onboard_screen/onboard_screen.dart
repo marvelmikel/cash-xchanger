@@ -73,6 +73,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 ],
               ),
               const SizedBox(height: 20),
+
               GlobalButton(
                 buttonText: 'Explore CX',
                 onTap: () => getItInstance<NavigationServiceImpl>()
