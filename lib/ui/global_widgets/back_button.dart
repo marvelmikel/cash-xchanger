@@ -3,10 +3,8 @@ import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class BackButtonWidget extends StatelessWidget {
-  const BackButtonWidget({
-    Key? key,
-    this.backButtonText = 'Account info'
-  }) : super(key: key);
+  const BackButtonWidget({Key? key, this.backButtonText = 'Account info'})
+      : super(key: key);
 
   final String backButtonText;
 

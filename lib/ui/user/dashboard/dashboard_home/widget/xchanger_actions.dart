@@ -23,7 +23,8 @@ class XchangerActions extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ImageWidget(
-            onTap: () => getItInstance<BookCashCubit>().checkAvailabilityAndNavigate(),
+            onTap: () =>
+                getItInstance<BookCashCubit>().checkAvailabilityAndNavigate(),
             imagePath: 'book_cash_icon.svg',
             imageTitle: 'Book cash',
           ),

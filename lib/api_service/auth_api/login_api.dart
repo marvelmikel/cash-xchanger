@@ -47,7 +47,6 @@ class LoginServiceImpl extends LoginApiService {
       });
 
       if (_response.statusCode == 200) {
-
         profileDetailsImp
             .profileDetails(email: userData['email'], context: context)
             .then((value) {

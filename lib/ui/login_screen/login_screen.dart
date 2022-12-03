@@ -95,7 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     isButtonColorGreen: true,
                     onTap: () {
                       if (globalKey.validate) {
-
                         getItInstance<LoginCubit>().login(
                             email: emailController.text,
                             password: passwordController.text,

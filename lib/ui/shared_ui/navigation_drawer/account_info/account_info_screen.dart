@@ -24,18 +24,21 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
             children: [
               const BackButtonWidget(),
               const SizedBox(height: 20),
-              profileImageX(context: context, email: state.profileModel!.userDetails.email),
+              profileImageX(
+                  context: context,
+                  email: state.profileModel!.userDetails.email),
               const SizedBox(height: 10),
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),
-                  padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 20),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 35, horizontal: 20),
                   height: double.infinity,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       color: GlobalColors.globalWhite,
-                      borderRadius:
-                          const BorderRadius.vertical(top: Radius.circular(20))),
+                      borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(20))),
                   child: Column(
                     children: [
                       Row(

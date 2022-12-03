@@ -29,8 +29,7 @@ class _PlanVestTextFieldState extends State<EditTextField> {
           FilteringTextInputFormatter.deny(RegExp(r'\s')),
           FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
         ],
-        style:
-            GlobalTextStyles.blueMediumText(context: context, fontSize: 40),
+        style: GlobalTextStyles.blueMediumText(context: context, fontSize: 40),
         decoration: InputDecoration(
           fillColor: Colors.white,
           hintText: '0.0',

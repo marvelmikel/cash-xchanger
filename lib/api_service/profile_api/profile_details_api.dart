@@ -99,7 +99,7 @@ class ProfileDetailsImp extends ProfileDetailsService {
               Fluttertoast.showToast(msg: 'Photo upload successful'),
               Navigator.pop(context)
             });
-        if(imageUploader.value){
+        if (imageUploader.value) {
           Navigator.pop(context);
           imageUploader.value = false;
         }
@@ -197,7 +197,7 @@ class ProfileDetailsImp extends ProfileDetailsService {
       if (_response.statusCode == 200) {
         profileDetails(email: email, context: context);
         Fluttertoast.showToast(msg: 'ID upload successful');
-        debugPrint( 'ID upload successful');
+        debugPrint('ID upload successful');
         isIDUploaded.value = true;
 
         Navigator.pop(context);

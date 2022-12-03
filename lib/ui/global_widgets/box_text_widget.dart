@@ -12,7 +12,6 @@ class BoxEditText extends StatelessWidget {
       required this.hint})
       : super(key: key);
 
-
   final String fieldName, hint;
   final TextInputType keyBoardType;
 
@@ -36,11 +35,9 @@ class BoxEditText extends StatelessWidget {
           TextFormField(
             enabled: false,
             keyboardType: keyBoardType,
-            inputFormatters: [
-              FilteringTextInputFormatter.deny(RegExp(r'\s'))
-            ],
-            style: GlobalTextStyles.blueMediumText(
-                context: context, fontSize: 18),
+            inputFormatters: [FilteringTextInputFormatter.deny(RegExp(r'\s'))],
+            style:
+                GlobalTextStyles.blueMediumText(context: context, fontSize: 18),
             decoration: InputDecoration(
               fillColor: GlobalColors.ashWhite,
               filled: true,

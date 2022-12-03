@@ -77,8 +77,8 @@ class BookCashScreen extends StatelessWidget {
                         Container(
                           color: GlobalColors.primaryPurpleLight,
                           margin: const EdgeInsets.only(top: 10),
-                          padding:
-                              const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 5, horizontal: 10),
                           child: Text(
                               'You can stack up multiple denominations and cash order!',
                               style: GlobalTextStyles.regularTextPurple(

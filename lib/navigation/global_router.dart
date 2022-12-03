@@ -68,14 +68,14 @@ class GlobalRouter {
             child: VendorWelcomeScreen(vendorData: settings.arguments),
             type: PageTransitionType.fade,
             settings: settings);
-        
-        case Routes.verifyEmailScreen:
+
+      case Routes.verifyEmailScreen:
         return PageTransition(
             child: const VerifyEmailScreen(),
             type: PageTransitionType.fade,
             settings: settings);
 
-        case Routes.verifyEmailPromptScreen:
+      case Routes.verifyEmailPromptScreen:
         return PageTransition(
             child: const VerifyEmailPromptScreen(),
             type: PageTransitionType.fade,

@@ -27,7 +27,6 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BookCashCubit, BookCashState>(builder: (context, state) {
-
       return ValueListenableBuilder(
           valueListenable: reveal,
           builder: (context, bool hideCard, child) {
@@ -103,7 +102,8 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                                     children: [
                                       CircleAvatar(
                                           radius: 20,
-                                          backgroundColor: GlobalColors.primaryGreen,
+                                          backgroundColor:
+                                              GlobalColors.primaryGreen,
                                           child: ClipOval(
                                             child: Image.memory(
                                               base64Decode(state.tempCashModel!
@@ -123,7 +123,6 @@ class _EnRouteWidgetState extends State<EnRouteWidget> {
                                                   .nearestVendors.vendorName,
                                               style: GlobalTextStyles
                                                   .regularMediumH()),
-
                                           Text(
                                               '${state.tempCashModel!.nearestVendors.cashAvailable} cash vendor',
                                               style: GlobalTextStyles

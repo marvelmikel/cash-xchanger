@@ -50,8 +50,7 @@ class ScheduledCardsWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    SvgPicture.asset('assets/images/no_card.svg',
-                        height: 70),
+                    SvgPicture.asset('assets/images/no_card.svg', height: 70),
                     const SizedBox(height: 10),
                     const Text('No recent schedules')
                   ],

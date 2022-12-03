@@ -50,7 +50,8 @@ class NotificationServiceImp extends NotificationService {
   @override
   Future<void> markAsRead({required String notificationRef}) async {
     try {
-      final uri = Uri.https(cxHead, '/notifications/transactions/read/$notificationRef', {
+      final uri = Uri.https(
+          cxHead, '/notifications/transactions/read/$notificationRef', {
         'MasterAPIKey': 'Qpieg2eKkXSAU1FCK7agQu2ohaT2YHHiLNHjE4BoQmvhQxIRKkg6F'
       });
       _response = await client

@@ -7,7 +7,8 @@ import 'dart:convert';
 VendorRatingsModel vendorRatingsFromMap(String str) =>
     VendorRatingsModel.fromMap(json.decode(str));
 
-String vendorRatingsModelToMap(VendorRatingsModel data) => json.encode(data.toMap());
+String vendorRatingsModelToMap(VendorRatingsModel data) =>
+    json.encode(data.toMap());
 
 class VendorRatingsModel {
   VendorRatingsModel({
@@ -22,7 +23,8 @@ class VendorRatingsModel {
   double percentageRejected;
   String vendorName;
 
-  factory VendorRatingsModel.fromMap(Map<String, dynamic> json) => VendorRatingsModel(
+  factory VendorRatingsModel.fromMap(Map<String, dynamic> json) =>
+      VendorRatingsModel(
         averageRating: json['average_rating'].toDouble(),
         percentageCompletion: json['percentage_completion'].toDouble(),
         percentageRejected: json['percentage_rejected'],

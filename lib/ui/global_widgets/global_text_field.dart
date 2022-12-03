@@ -30,7 +30,6 @@ class GlobalTextField extends StatefulWidget {
 }
 
 class _GlobalTextFieldState extends State<GlobalTextField> {
-  
   @override
   Widget build(BuildContext context) {
     bool obscureText = widget.obscureText;
@@ -64,8 +63,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
           suffixIcon: Visibility(
             visible: widget.isEyeVisible,
             child: IconButton(
-                onPressed: () =>
-                    setState(() => obscureText = !obscureText),
+                onPressed: () => setState(() => obscureText = !obscureText),
                 icon: Icon(
                   widget.obscureText
                       ? Icons.remove_red_eye

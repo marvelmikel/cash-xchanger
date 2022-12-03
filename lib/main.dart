@@ -1,4 +1,3 @@
-
 import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:cash_xchanger/index.dart';
 import 'package:flutter/material.dart';

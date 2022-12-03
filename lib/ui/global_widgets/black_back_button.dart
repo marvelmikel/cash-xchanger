@@ -3,10 +3,7 @@ import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class BlackBackButtonWidget extends StatelessWidget {
-  const BlackBackButtonWidget({
-    Key? key,
-    required this.text
-  }) : super(key: key);
+  const BlackBackButtonWidget({Key? key, required this.text}) : super(key: key);
 
   final String text;
 
@@ -15,7 +12,8 @@ class BlackBackButtonWidget extends StatelessWidget {
     return Container(
       color: GlobalColors.globalWhite,
       child: Padding(
-        padding: const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 10),
+        padding:
+            const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 10),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -32,7 +30,8 @@ class BlackBackButtonWidget extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 alignment: Alignment.center,
-                child: Text( text,
+                child: Text(
+                  text,
                   style: GlobalTextStyles.regularMediumW(
                       context: context, fontSize: 24),
                 ),

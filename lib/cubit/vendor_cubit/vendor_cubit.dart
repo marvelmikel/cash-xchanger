@@ -43,20 +43,22 @@ class VendorCubit extends Cubit<VendorState> {
   }
 
   void online({required BuildContext context, cashType}) {
-    nearbyVendorApiServiceImpl.onlineVendor(
-        context: context, isOnline: true, cashType: cashType).then((value){
+    nearbyVendorApiServiceImpl
+        .onlineVendor(context: context, isOnline: true, cashType: cashType)
+        .then((value) {
       isUserOnline.value = true;
     });
     countdownTimer = Timer.periodic(const Duration(minutes: 5), (_) {
-      nearbyVendorApiServiceImpl.onlineVendor(
-          context: context, isOnline: true, cashType: cashType).then((value){
-      });
+      nearbyVendorApiServiceImpl
+          .onlineVendor(context: context, isOnline: true, cashType: cashType)
+          .then((value) {});
     });
   }
 
   void _offLine({required BuildContext context}) {
-    nearbyVendorApiServiceImpl.onlineVendor(
-        context: context, isOnline: false, cashType: 'mint').then((value){
+    nearbyVendorApiServiceImpl
+        .onlineVendor(context: context, isOnline: false, cashType: 'mint')
+        .then((value) {
       isUserOnline.value = !isUserOnline.value;
     });
   }

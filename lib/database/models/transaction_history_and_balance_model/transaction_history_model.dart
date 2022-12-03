@@ -10,7 +10,6 @@ TransactionHistoryModel transactionHistoryModelFromMap(String str) =>
 String transactionHistoryModelToMap(TransactionHistoryModel data) =>
     json.encode(data.toMap());
 
-
 class TransactionHistoryModel {
   TransactionHistoryModel({
     required this.transactionHistory,

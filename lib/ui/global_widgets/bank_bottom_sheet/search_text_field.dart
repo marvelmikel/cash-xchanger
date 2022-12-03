@@ -9,10 +9,12 @@ class SearchTextField extends StatefulWidget {
   final TextEditingController textController;
   final int maxLength;
 
-   const SearchTextField(
-      {Key? key, required this.fieldName,
+  const SearchTextField(
+      {Key? key,
+      required this.fieldName,
       required this.textController,
-      this.maxLength = 35}) : super(key: key);
+      this.maxLength = 35})
+      : super(key: key);
 
   @override
   State<SearchTextField> createState() => _SearchTextFieldState();

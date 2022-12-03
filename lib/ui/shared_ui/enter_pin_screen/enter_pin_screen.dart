@@ -45,8 +45,8 @@ class EnterPinScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 40),
                     decoration: BoxDecoration(
                         color: GlobalColors.globalWhite,
-                        borderRadius:
-                            const BorderRadius.vertical(top: Radius.circular(20))),
+                        borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(20))),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

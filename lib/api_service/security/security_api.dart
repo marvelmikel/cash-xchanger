@@ -98,5 +98,4 @@ class SecurityImp extends SecurityService {
       debugPrint('Error in verifying password');
     }
   }
-
 }

@@ -28,16 +28,17 @@ class BalanceWidget extends StatelessWidget {
             children: [
               Text('My balance',
                   style: GlobalTextStyles.regularTextWhite(context: context)),
-          state.isDatabaseEmpty
-              ?  Text('N 0.00',
-              style: GlobalTextStyles.boldGreenText(context: context))
-              :   Text(formatFigures(double.tryParse(state.profileModel!.userBalance)!),
-              style: GlobalTextStyles.boldGreenText(context: context))
+              state.isDatabaseEmpty
+                  ? Text('N 0.00',
+                      style: GlobalTextStyles.boldGreenText(context: context))
+                  : Text(
+                      formatFigures(
+                          double.tryParse(state.profileModel!.userBalance)!),
+                      style: GlobalTextStyles.boldGreenText(context: context))
             ],
           ),
         );
       },
     );
-
   }
 }

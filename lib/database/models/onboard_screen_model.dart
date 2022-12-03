@@ -25,7 +25,6 @@ class OnboardScreenModel {
         bodyText: 'keep track of your money requests and create goals.'),
   ];
 
-
   static List<Widget> listOfOnboardPagesWidgets() {
     List<Widget> _listOfOnboardPages = [
       OnboardPageItem(

@@ -14,7 +14,8 @@ var baseImage = ValueNotifier('');
 var imageBytes = ValueNotifier<List<int>>([]);
 
 class UploadPhotoBottomSheet extends StatefulWidget {
-  const UploadPhotoBottomSheet({Key? key, required this.email}) : super(key: key);
+  const UploadPhotoBottomSheet({Key? key, required this.email})
+      : super(key: key);
 
   final String email;
 
@@ -38,7 +39,7 @@ class _UploadPhotoBottomSheetState extends State<UploadPhotoBottomSheet> {
         if (image != null) {
           setState(() {
             imageFile = File(image.path);
-             imageBytes.value = imageFile!.readAsBytesSync();
+            imageBytes.value = imageFile!.readAsBytesSync();
             baseImage.value = base64Encode(imageBytes.value);
             imageUploader.value = true;
             context.read<ProfileCubit>().uploadImage(
@@ -96,7 +97,7 @@ class _UploadPhotoBottomSheetState extends State<UploadPhotoBottomSheet> {
                         onTap: () => chooseImage(),
                         child: Stack(clipBehavior: Clip.none, children: [
                           ClipRRect(
-                              child:imageBytes.value.isEmpty
+                              child: imageBytes.value.isEmpty
                                   ? Container(
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 80, horizontal: 40),
@@ -135,7 +136,8 @@ class _UploadPhotoBottomSheetState extends State<UploadPhotoBottomSheet> {
                         onTap: () {
                           if (imageBytes.value.isNotEmpty) {
                             context.read<ProfileCubit>().uploadImage(
-                                imageBytes: base64Encode(imageBytes.value), context: context);
+                                imageBytes: base64Encode(imageBytes.value),
+                                context: context);
                           }
                         })
                   ],
