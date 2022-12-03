@@ -1,6 +1,5 @@
 import 'dart:async';
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_paystack/flutter_paystack.dart';
@@ -21,7 +20,7 @@ class PaystackPayment {
   }
 
   Future initializePlugin() async {
-    await _paystack.initialize(publicKey: ConstantKey.PAYSTACK_KEY);
+    await _paystack.initialize(publicKey: ConstantKey.paystackKey);
   }
 
   chargeCardAndMakePayment(
@@ -52,9 +51,8 @@ class PaystackPayment {
                 'Pra8CPHHySKFEBYvgHRan1wP7LOnaoYkgT7J1dNw1AR6xlNt8u9c6&reference',
             'reference': reference
           });
-          client
-              .get(uri, headers: header)
-              .timeout(const Duration(seconds: 10), onTimeout: () {
+          client.get(uri, headers: header).timeout(const Duration(seconds: 10),
+              onTimeout: () {
             var errorMessage = 'The connection has timed out, Please try again';
             throw TimeoutException(errorMessage);
           });
