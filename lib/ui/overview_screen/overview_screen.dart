@@ -64,36 +64,30 @@ class OverviewScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: GlobalSizes.globalWidth(context, 0.12)),
-                    GlobalButton(
-                        buttonText: 'Sign up',
-                        isButtonColorGreen: true,
-                        onTap: () => getItInstance<NavigationServiceImpl>()
-                            .navigateTo(Routes.signUpScreen)),
-                    SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),
-                    GlobalButton(
-                      buttonText: 'Login',
-                      isButtonColorGreen: true,
-                      outLined: true,
-                      forground: GlobalColors.primaryBlue,
-                      onTap: () => getItInstance<NavigationServiceImpl>()
-                          .navigateTo(Routes.loginScreen),
+                    ValueListenableBuilder(
+                      valueListenable: userType,
+                      builder: (context, value, child) {
+                        return GlobalButton(
+                            buttonText: 'Sign up',
+                            isButtonColorGreen: true,
+                            isDisabled: userType.value == 'unselected',
+                            onTap: () => getItInstance<NavigationServiceImpl>()
+                                .navigateTo(Routes.signUpScreen));
+                      },
                     ),
-                    // InkWell(
-                    //   onTap:
-                    //   borderRadius: BorderRadius.circular(100),
-                    //   child: Container(
-                    //     padding: const EdgeInsets.symmetric(
-                    //         vertical: 10, horizontal: 10),
-                    //     child: Text(
-                    //       'Login',
-                    //       textAlign: TextAlign.center,
-                    //       style: TextStyle(
-                    //           fontWeight: FontWeight.w700,
-                    //           fontSize: GlobalSizes.globalWidth(context, 0.045),
-                    //           color: GlobalColors.primaryBlue),
-                    //     ),
-                    //   ),
-                    // ),
+                    SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),
+                    ValueListenableBuilder(
+                        valueListenable: userType,
+                        builder: (context, value, child) {
+                          return GlobalButton(
+                            buttonText: 'Login',
+                            outLined: true,
+                            isDisabled: userType.value == 'unselected',
+                            forground: GlobalColors.primaryBlue,
+                            onTap: () => getItInstance<NavigationServiceImpl>()
+                                .navigateTo(Routes.loginScreen),
+                          );
+                        }),
                     SizedBox(height: GlobalSizes.globalHeight(context, 0.04)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class GlobalButton extends StatelessWidget {
-  GlobalButton(
+  const GlobalButton(
       {Key? key,
       required this.buttonText,
       this.isButtonColorGreen = false,
@@ -41,13 +41,22 @@ class GlobalButton extends StatelessWidget {
                 outlined: outLined),
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
-                color:
-                    outLined ? GlobalColors.primaryGreen : Colors.transparent,
+                color: outLined
+                    ? isDisabled
+                        ? GlobalColors.primaryGreen.withOpacity(0.2)
+                        : GlobalColors.primaryGreen
+                    : Colors.transparent,
                 width: 1.2)),
         child: Text(
           buttonText,
           style: TextStyle(
-              fontWeight: FontWeight.w700, fontSize: 16, color: forground),
+              fontWeight: FontWeight.w700,
+              fontSize: 16,
+              color: isDisabled
+                  ? isButtonColorGreen
+                      ? forground
+                      : forground.withOpacity(0.4)
+                  : forground),
         ),
       ),
     );
@@ -59,7 +68,11 @@ class GlobalButton extends StatelessWidget {
     required bool outlined,
   }) {
     if (isDisabled) {
-      return GlobalColors.primaryGreen;
+      return outLined
+          ? Colors.transparent
+          : isGreenButton
+              ? GlobalColors.primaryGreen.withOpacity(0.4)
+              : GlobalColors.primaryBlue;
     }
     if (outLined) {
       return Colors.transparent;

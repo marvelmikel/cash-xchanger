@@ -4,7 +4,7 @@ import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-ValueNotifier userType = ValueNotifier('user');
+ValueNotifier userType = ValueNotifier('unselected');
 
 class UserCashWidget extends StatelessWidget {
   String activeImage, inActiveImage, title, description;
