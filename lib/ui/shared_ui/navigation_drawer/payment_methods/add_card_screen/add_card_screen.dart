@@ -174,7 +174,8 @@ class _AddCardScreenState extends State<AddCardScreen> {
                             context.read<PaymentCubit>().addCardDetails(
                                 context: context,
                                 cardNumber: cardNumberController.text,
-                                expDate: '${expiryMonthController.text}/${expiryYearController.text}',
+                                expDate:
+                                    '${expiryMonthController.text}/${expiryYearController.text}',
                                 cvv: cvvController.text);
                           }
                         })

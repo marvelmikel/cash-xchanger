@@ -11,17 +11,23 @@ class GlobalTextField extends StatefulWidget {
   final bool isCenterText;
   final bool isEyeVisible;
   final bool removeSpace;
-  late   bool obscureText;
 
-    GlobalTextField(
-      {Key? key, required this.fieldName,
+  final bool obscureText;
+
+  const GlobalTextField(
+      {Key? key,
+      required this.fieldName,
+
       required this.keyBoardType,
       required this.textController,
       this.removeSpace = true,
       this.obscureText = false,
       this.isCenterText = false,
       this.isEyeVisible = false,
-      this.maxLength = 35}) : super(key: key);
+      this.maxLength = 35})
+      : super(key: key);
+
+
 
   @override
   State<GlobalTextField> createState() => _GlobalTextFieldState();
@@ -30,6 +36,7 @@ class GlobalTextField extends StatefulWidget {
 class _GlobalTextFieldState extends State<GlobalTextField> {
   @override
   Widget build(BuildContext context) {
+    bool obscureText = widget.obscureText;
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: TextFormField(
@@ -53,14 +60,20 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
         ),
         decoration: InputDecoration(
           labelText: widget.fieldName,
+          floatingLabelStyle: TextStyle(color: GlobalColors.purpleBlue),
           isDense: true,
-          contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
           suffixIcon: Visibility(
             visible: widget.isEyeVisible,
             child: IconButton(
-                onPressed: () =>
-                    setState(() => widget.obscureText = !widget.obscureText),
-                icon: const Icon(Icons.remove_red_eye)),
+                onPressed: () => setState(() => obscureText = !obscureText),
+                icon: Icon(
+                  widget.obscureText
+                      ? Icons.remove_red_eye
+                      : Icons.remove_red_eye_outlined,
+                  color: GlobalColors.purpleBlue,
+                )),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -73,8 +86,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
               borderSide: const BorderSide(color: Colors.red, width: 0.5)),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide:
-                BorderSide(color: GlobalColors.primaryGreen, width: 0.5),
+            borderSide: BorderSide(color: GlobalColors.purpleBlue, width: 0.5),
           ),
         ),
         validator: (value) {

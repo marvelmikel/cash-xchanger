@@ -69,7 +69,10 @@ class _AddBankBottomSheetState extends State<AddBankBottomSheet> {
                     }
                   },
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 20),
+
                     width: double.infinity,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

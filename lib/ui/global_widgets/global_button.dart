@@ -82,5 +82,4 @@ class GlobalButton extends StatelessWidget {
     }
   }
 }
-/// isButtonColorGreen
-               
+

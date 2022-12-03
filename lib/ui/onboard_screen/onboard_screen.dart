@@ -51,29 +51,29 @@ class _OnboardScreenState extends State<OnboardScreen> {
                       activeDotColor: GlobalColors.materialPrimaryColor,
                     ),
                   ),
-                  pageCount == 2
-                      ? const SizedBox()
-                      : GestureDetector(
-                          onTap: () => getItInstance<NavigationServiceImpl>()
-                              .navigateTo(Routes.overViewScreen),
-                          child: SizedBox(
-                            height: 30,
-                            width: 80,
-                            child: Text(
-                              'Continue',
-                              style: TextStyle(
-                                fontFamily: 'nunito',
-                                fontWeight: FontWeight.w600,
-                                fontSize:
-                                    GlobalSizes.globalWidth(context, 0.04),
-                              ),
-                            ),
-                          ),
-                        )
+                  // pageCount == 2
+                  //     ? const SizedBox()
+                  //     : GestureDetector(
+                  //         onTap: () => getItInstance<NavigationServiceImpl>()
+                  //             .navigateTo(Routes.overViewScreen),
+                  //         child: SizedBox(
+                  //           height: 30,
+                  //           width: 80,
+                  //           child: Text(
+                  //             'Continue',
+                  //             style: TextStyle(
+                  //               fontFamily: 'nunito',
+                  //               fontWeight: FontWeight.w600,
+                  //               fontSize:
+                  //                   GlobalSizes.globalWidth(context, 0.04),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       )
                 ],
               ),
               const SizedBox(height: 20),
-                if (pageCount == 2)
+
               GlobalButton(
                 buttonText: 'Explore CX',
                 onTap: () => getItInstance<NavigationServiceImpl>()

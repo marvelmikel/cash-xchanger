@@ -1,4 +1,3 @@
-
 import 'package:cash_xchanger/cubit/vendor_cubit/vendor_cubit.dart';
 import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
@@ -20,7 +19,7 @@ class SwitchButtonWidget extends StatefulWidget {
 class _SwitchButtonWidgetState extends State<SwitchButtonWidget> {
   @override
   Widget build(BuildContext context) {
-   // Timer? countdownTimer;
+    // Timer? countdownTimer;
 
     return ValueListenableBuilder(
         valueListenable: isUserOnline,
@@ -64,8 +63,8 @@ class _SwitchButtonWidgetState extends State<SwitchButtonWidget> {
 
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 800),
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 3),
                         width: 55,
                         height: 25,
                         decoration: BoxDecoration(

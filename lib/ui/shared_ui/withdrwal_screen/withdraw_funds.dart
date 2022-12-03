@@ -67,7 +67,8 @@ class _WithdrawFundsScreenState extends State<WithdrawFundsScreen> {
                                 context: context,
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,
-                                builder: (context) => const AddBankBottomSheet()),
+                                builder: (context) =>
+                                    const AddBankBottomSheet()),
                             child: Padding(
                               padding:
                                   const EdgeInsets.only(left: 20, bottom: 20),

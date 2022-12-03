@@ -7,9 +7,8 @@ class Routes {
   static const String loginScreen = '/loginScreen';
   static const String confirmationScreen = '/confirmationScreen';
   static const String vendorWelcomeScreen = '/vendorWelcomeScreen';
-  static const String  verifyEmailScreen = '/verifyEmailScreen';
+  static const String verifyEmailScreen = '/verifyEmailScreen';
   static const String verifyEmailPromptScreen = '/verifyEmailPromptScreen';
-
 
 
   // User Nav Drawer
@@ -24,11 +23,9 @@ class Routes {
   static const String fundWalletScreen = '/fundWalletScreen';
   static const String successScreen = '/successScreen';
 
-
   static const String withdrawFundsScreen = '/withdrawFundsScreen';
   static const String withdrawScreen = '/withdrawScreen';
   static const String enterPinScreen = '/enterPinScreen';
-
 
   // User Routes
   static const String userDashBoard = '/userDashBoard';
@@ -36,7 +33,6 @@ class Routes {
   static const String meetUpLocationScreen = '/meetUpLocationScreen';
   static const String requestCashScreen = '/requestCashScreen';
   static const String connectVendorScreen = '/connectVendorScreen';
-
 
   // Vendor Routes
   static const String vendorDashboard = '/vendorDashboard';

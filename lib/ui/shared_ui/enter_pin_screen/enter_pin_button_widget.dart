@@ -12,7 +12,6 @@ class EnterPinKeypadButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ValueListenableBuilder(
         valueListenable: inputText,
         builder: (context, String pinCode, child) {

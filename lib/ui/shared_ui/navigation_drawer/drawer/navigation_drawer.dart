@@ -54,12 +54,13 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '${state.profileModel!.userDetails.firstName} ${state.profileModel!.userDetails.lastName}',
+                                '${state.profileModel?.userDetails.firstName ?? "John"} ${state.profileModel?.userDetails.lastName ?? "Doe"}',
                                 style: GlobalTextStyles.regularTextWhite(
                                     context: context),
                               ),
                               Text(
-                                state.profileModel!.userDetails.email,
+                                state.profileModel?.userDetails.email ??
+                                    'john@doe.com',
                                 style: GlobalTextStyles.regularGreenText(
                                     context: context, fontSize: 14),
                               ),
@@ -78,18 +79,18 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                               .navigateTo(Routes.accountInfoScreen);
                         },
                       ),
-                      state.profileModel!.userDetails.userRole == 'user'
-                      ? NavMenuItem(
-                        menuImage: 'calendar_icon.svg',
-                        menuTitle: 'Scheduled cash orders',
-                        menuSubTitle: 'Your scheduled orders',
-                        onTap: () {
-                          Navigator.pop(context);
-                          getItInstance<NavigationServiceImpl>()
-                              .navigateTo(Routes.scheduledTransfers);
-                        },
-                      )
-                      : const SizedBox.shrink(),
+                      state.profileModel?.userDetails.userRole == 'user'
+                          ? NavMenuItem(
+                              menuImage: 'calendar_icon.svg',
+                              menuTitle: 'Scheduled cash orders',
+                              menuSubTitle: 'Your scheduled orders',
+                              onTap: () {
+                                Navigator.pop(context);
+                                getItInstance<NavigationServiceImpl>()
+                                    .navigateTo(Routes.scheduledTransfers);
+                              },
+                            )
+                          : const SizedBox.shrink(),
                       NavMenuItem(
                         menuImage: 'bell_icon.svg',
                         menuTitle: 'Notifications',

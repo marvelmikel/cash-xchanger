@@ -34,8 +34,8 @@ class NavMenuItem extends StatelessWidget {
                   children: [
                     Text(
                       menuTitle,
-                      style: GlobalTextStyles.regularTextWhite(
-                          context: context),
+                      style:
+                          GlobalTextStyles.regularTextWhite(context: context),
                     ),
                     Text(
                       menuSubTitle,

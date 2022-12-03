@@ -110,7 +110,8 @@ class _UploadLicenseBottomSheetState extends State<UploadLicenseBottomSheet> {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                               child: Image.memory(
-                                                base64Decode(base64Encode(idImageBytes.value)),
+                                                base64Decode(base64Encode(
+                                                    idImageBytes.value)),
                                                 fit: BoxFit.cover,
                                                 height: 100,
                                                 width: 100,
