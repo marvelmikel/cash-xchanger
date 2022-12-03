@@ -6,7 +6,6 @@ import '../../helpers/colors.dart';
 import '../../helpers/text_styles.dart';
 import '../../navigation/navigation_service.dart';
 import '../../navigation/routes.dart';
-import '../global_widgets/back_button.dart';
 import '../global_widgets/global_button.dart';
 import '../shared_ui/enter_pin_screen/enter_pin_button_widget.dart';
 import '../shared_ui/enter_pin_screen/enter_pin_keypad_buttons.dart';
