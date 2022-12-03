@@ -16,9 +16,9 @@ class BalanceWidget extends StatelessWidget {
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
         return AnimatedContainer(
-          duration: Duration(milliseconds: 140),
+          duration: const Duration(milliseconds: 140),
           width: GlobalSizes.globalWidth(context, 1),
-          margin: EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           decoration: BoxDecoration(
               color: GlobalColors.primaryBlue,

@@ -63,7 +63,7 @@ class FundWalletKeypadButtons extends StatelessWidget {
                                 buttonText: '⌫', textController: textController)
                             .calculation(context, '⌫', value),
                         child: Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             child: SvgPicture.asset(
                                 'assets/images/back_icon.svg')),
                       ),

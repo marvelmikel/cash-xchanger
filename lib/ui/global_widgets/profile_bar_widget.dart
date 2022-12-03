@@ -1,10 +1,8 @@
-import 'package:cash_xchanger/cubit/profile_cubit/profile_cubit.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
 import 'package:cash_xchanger/helpers/sizes.dart';
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ProfileBarWidget extends StatefulWidget {

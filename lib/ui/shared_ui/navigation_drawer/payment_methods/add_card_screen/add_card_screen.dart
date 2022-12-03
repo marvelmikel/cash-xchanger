@@ -45,8 +45,8 @@ class _AddCardScreenState extends State<AddCardScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(30),
-                      margin: EdgeInsets.symmetric(vertical: 30),
+                      padding: const EdgeInsets.all(30),
+                      margin: const EdgeInsets.symmetric(vertical: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: GlobalColors.primaryBlack,

@@ -3,7 +3,6 @@ import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -70,7 +69,7 @@ class _AddBankBottomSheetState extends State<AddBankBottomSheet> {
                     }
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                     width: double.infinity,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

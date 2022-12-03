@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardScreen extends StatefulWidget {
+  const OnboardScreen({Key? key}) : super(key: key);
+
   @override
   State<OnboardScreen> createState() => _OnboardScreenState();
 }
@@ -29,7 +31,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
           children: OnboardScreenModel.listOfOnboardPagesWidgets(),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -71,12 +73,12 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              if (pageCount == 2)
-                GlobalButton(
-                  buttonText: 'Explore CX',
-                  onTap: () => getItInstance<NavigationServiceImpl>()
-                      .navigateTo(Routes.overViewScreen),
-                )
+                if (pageCount == 2)
+              GlobalButton(
+                buttonText: 'Explore CX',
+                onTap: () => getItInstance<NavigationServiceImpl>()
+                    .navigateTo(Routes.overViewScreen),
+              )
             ],
           ),
         ),

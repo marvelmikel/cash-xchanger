@@ -45,7 +45,7 @@ class OverviewScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        UserCashWidget(
+                        const UserCashWidget(
                             inActiveImage: 'user_inactive.svg',
                             activeImage: 'user_active.svg',
                             title: 'User',
@@ -54,7 +54,7 @@ class OverviewScreen extends StatelessWidget {
                             userRole: 'user'),
                         SizedBox(
                             width: GlobalSizes.globalWidth(context, 0.025)),
-                        UserCashWidget(
+                        const UserCashWidget(
                             inActiveImage: 'cash_inactive.svg',
                             activeImage: 'cash_active.svg',
                             title: 'Cash Vendor',
@@ -64,29 +64,30 @@ class OverviewScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: GlobalSizes.globalWidth(context, 0.12)),
-                    GlobalButton(
-                        buttonText: 'Sign up',
-                        isButtonColorGreen: true,
-                        onTap: () => getItInstance<NavigationServiceImpl>()
-                            .navigateTo(Routes.signUpScreen)),
-                    SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),
-                    InkWell(
-                      onTap: () => getItInstance<NavigationServiceImpl>()
-                          .navigateTo(Routes.loginScreen),
-                      borderRadius: BorderRadius.circular(100),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 10),
-                        child: Text(
-                          'Login',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: GlobalSizes.globalWidth(context, 0.045),
-                              color: GlobalColors.primaryBlue),
-                        ),
-                      ),
+                    ValueListenableBuilder(
+                      valueListenable: userType,
+                      builder: (context, value, child) {
+                        return GlobalButton(
+                            buttonText: 'Sign up',
+                            isButtonColorGreen: true,
+                            isDisabled: userType.value == 'unselected',
+                            onTap: () => getItInstance<NavigationServiceImpl>()
+                                .navigateTo(Routes.signUpScreen));
+                      },
                     ),
+                    SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),
+                    ValueListenableBuilder(
+                        valueListenable: userType,
+                        builder: (context, value, child) {
+                          return GlobalButton(
+                            buttonText: 'Login',
+                            outLined: true,
+                            isDisabled: userType.value == 'unselected',
+                            forground: GlobalColors.primaryBlue,
+                            onTap: () => getItInstance<NavigationServiceImpl>()
+                                .navigateTo(Routes.loginScreen),
+                          );
+                        }),
                     SizedBox(height: GlobalSizes.globalHeight(context, 0.04)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),

@@ -1,5 +1,4 @@
 import 'package:cash_xchanger/helpers/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,10 +9,10 @@ class SearchTextField extends StatefulWidget {
   final TextEditingController textController;
   final int maxLength;
 
-  SearchTextField(
-      {required this.fieldName,
+   const SearchTextField(
+      {Key? key, required this.fieldName,
       required this.textController,
-      this.maxLength = 35});
+      this.maxLength = 35}) : super(key: key);
 
   @override
   State<SearchTextField> createState() => _SearchTextFieldState();

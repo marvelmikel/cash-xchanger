@@ -1,6 +1,4 @@
-import 'package:cash_xchanger/cubit/book_cash_cubit/book_cash_cubit.dart';
 import 'package:cash_xchanger/cubit/profile_cubit/profile_cubit.dart';
-import 'package:cash_xchanger/database/models/vendor_rating_model/vendor_rating_model.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
 import 'package:cash_xchanger/helpers/sizes.dart';
@@ -14,7 +12,7 @@ import '../../shared_ui/navigation_drawer/drawer/navigation_drawer.dart';
 import 'switch_button_widget.dart';
 
 class VendorDashboard extends StatefulWidget {
-  VendorDashboard({Key? key}) : super(key: key);
+  const VendorDashboard({Key? key}) : super(key: key);
 
   @override
   State<VendorDashboard> createState() => _VendorDashboardState();

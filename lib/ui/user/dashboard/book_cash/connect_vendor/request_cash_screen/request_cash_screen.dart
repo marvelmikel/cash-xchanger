@@ -58,51 +58,54 @@ class _RequestCashScreenState extends State<RequestCashScreen> {
         builder: (context, values, child) {
           var changeCards = values[0];
           var showMap = values[1];
-          print(changeCards);
-          return Scaffold(
-            backgroundColor: GlobalColors.globalWhite,
-            body: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                GoogleMap(
-                    mapType: MapType.normal,
-                    initialCameraPosition: initialCameraPosition,
-                    markers: {
-                      if (_origin != null) _origin!,
-                      if (_destination != null) _destination!,
-                    }),
-                changeCards ? RequestWidget() : EnRouteWidget(),
-                Hero(
-                  tag: 'reveal',
-                  child: GestureDetector(
-                    onTap: () => reveal.value = false,
-                    child: Visibility(
-                      visible: showMap,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 15),
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 90, vertical: 40),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: GlobalColors.primaryBlue),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Reveal transaction',
-                                style: GlobalTextStyles.regularMediumWhite(
-                                    fontSize: 16)),
-                            SvgPicture.asset(
-                              'assets/images/money_bag_icon_no_background.svg',
-                              height: 30,
-                            ),
-                          ],
+          debugPrint(changeCards);
+          return InkWell(
+            onDoubleTap: () => addMarker(const LatLng(-1, 0)),
+            child: Scaffold(
+              backgroundColor: GlobalColors.globalWhite,
+              body: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  GoogleMap(
+                      mapType: MapType.normal,
+                      initialCameraPosition: initialCameraPosition,
+                      markers: {
+                        if (_origin != null) _origin!,
+                        if (_destination != null) _destination!,
+                      }),
+                  changeCards ? const RequestWidget() : const EnRouteWidget(),
+                  Hero(
+                    tag: 'reveal',
+                    child: GestureDetector(
+                      onTap: () => reveal.value = false,
+                      child: Visibility(
+                        visible: showMap,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 15),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 90, vertical: 40),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: GlobalColors.primaryBlue),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Reveal transaction',
+                                  style: GlobalTextStyles.regularMediumWhite(
+                                      fontSize: 16)),
+                              SvgPicture.asset(
+                                'assets/images/money_bag_icon_no_background.svg',
+                                height: 30,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         });

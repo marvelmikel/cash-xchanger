@@ -1,6 +1,5 @@
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/text_styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

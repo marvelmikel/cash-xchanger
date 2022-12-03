@@ -46,13 +46,13 @@ class VendorWelcomeScreen extends StatelessWidget {
                   style: GlobalTextStyles.blueMediumText(
                       context: context, fontSize: 20),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   'Here\'s what you need to do to set up your account',
                   style: GlobalTextStyles.regularText(
                       context: context, fontSize: 16),
                 ),
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
                 GestureDetector(
                   onTap: () => showModalBottomSheet(
                       context: context,
@@ -95,7 +95,7 @@ class VendorWelcomeScreen extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 15),
-                        Divider()
+                        const Divider()
                       ],
                     ),
                   ),
@@ -119,7 +119,7 @@ class VendorWelcomeScreen extends StatelessWidget {
                               children: [
                                 SvgPicture.asset('assets/images/file_image.svg',
                                     height: 30),
-                                SizedBox(width: 20),
+                                const SizedBox(width: 20),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [

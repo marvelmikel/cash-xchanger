@@ -14,7 +14,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../database/models/notifications_model/notification_model.dart';
 
 class NotificationScreen extends StatefulWidget {
-  NotificationScreen({Key? key, required this.email}) : super(key: key);
+  const NotificationScreen({Key? key, required this.email}) : super(key: key);
 
   final String email;
 
@@ -100,8 +100,8 @@ class NotificationItem extends StatelessWidget {
             color: userNotification.status ? Colors.grey : Colors.transparent,
             backgroundBlendMode: BlendMode.saturation,
           ),
-          margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
           decoration: BoxDecoration(
               color: GlobalColors.globalWhite,
               borderRadius: BorderRadius.circular(10)),

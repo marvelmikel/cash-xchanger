@@ -1,6 +1,5 @@
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,17 +11,17 @@ class GlobalTextField extends StatefulWidget {
   final bool isCenterText;
   final bool isEyeVisible;
   final bool removeSpace;
-  late bool obscureText;
+  late   bool obscureText;
 
-  GlobalTextField(
-      {required this.fieldName,
+    GlobalTextField(
+      {Key? key, required this.fieldName,
       required this.keyBoardType,
       required this.textController,
       this.removeSpace = true,
       this.obscureText = false,
       this.isCenterText = false,
       this.isEyeVisible = false,
-      this.maxLength = 35});
+      this.maxLength = 35}) : super(key: key);
 
   @override
   State<GlobalTextField> createState() => _GlobalTextFieldState();
@@ -43,7 +42,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
             : TextCapitalization.none,
         inputFormatters: [
           widget.removeSpace
-              ? FilteringTextInputFormatter.deny(new RegExp(r"\s\b|\b\s"))
+              ? FilteringTextInputFormatter.deny(RegExp(r'\s\b|\b\s'))
               : LengthLimitingTextInputFormatter(widget.maxLength),
           widget.keyBoardType == TextInputType.phone
               ? FilteringTextInputFormatter.deny(RegExp(r'^0+'))
@@ -97,6 +96,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
           } else {
             return null;
           }
+          return null;
         },
       ),
     );

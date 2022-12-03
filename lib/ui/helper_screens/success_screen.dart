@@ -1,7 +1,6 @@
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_gray_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';

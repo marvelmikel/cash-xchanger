@@ -1,6 +1,5 @@
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/sizes.dart';
-import 'package:cash_xchanger/ui/overview_screen/overview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

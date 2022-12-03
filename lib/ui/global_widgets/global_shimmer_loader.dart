@@ -7,10 +7,10 @@ class GlobalShimmerLoader extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  double sizeTwo = 1.5.h;
-  double sizeThree = 2.h;
-  double sizeFive = 3.h;
-  double sizeTen = 5.h;
+  final double sizeTwo = 1.5.h;
+  final double sizeThree = 2.h;
+  final double sizeFive = 3.h;
+  final double sizeTen = 5.h;
 
   @override
   Widget build(BuildContext context) {

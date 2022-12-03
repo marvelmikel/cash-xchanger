@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../api_service/auth_api/auth_api.dart';
+import '../../dependency/get_it.dart';
+import '../../navigation/navigation_service.dart';
+import '../../navigation/routes.dart';
 
 class RegisterState {
   RegisterState();
@@ -21,17 +24,18 @@ class RegisterCubit extends Cubit<RegisterState> {
       required String phoneNumber,
       required String role,
       required BuildContext context}) async {
-
-    Map<String, dynamic> userData = {
-      'username': username,
-      'first_name': firstName,
-      'last_name': lastName,
-      'email': email,
-      'password': password,
-      'phone_number': phoneNumber,
-      'role': role
-    };
-    await authApiServiceImpl.signUp(userData: userData, context: context);
+    // Map<String, dynamic> userData = {
+    //   'username': username,
+    //   'first_name': firstName,
+    //   'last_name': lastName,
+    //   'email': email,
+    //   'password': password,
+    //   'phone_number': phoneNumber,
+    //   'role': role
+    // };
+    // await authApiServiceImpl.signUp(userData: userData, context: context);
+    getItInstance<NavigationServiceImpl>()
+        .navigateTo(Routes.verifyEmailPromptScreen,);
     emit(RegisterState());
   }
 }

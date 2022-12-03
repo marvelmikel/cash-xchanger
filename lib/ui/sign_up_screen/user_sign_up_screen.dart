@@ -13,7 +13,7 @@ import '../../cubit/auth_cubit/register_cubit.dart';
 import '../overview_screen/user_cash_widget.dart';
 
 class UserSignUpScreen extends StatefulWidget {
-  UserSignUpScreen({Key? key}) : super(key: key);
+  const UserSignUpScreen({Key? key}) : super(key: key);
 
   @override
   State<UserSignUpScreen> createState() => _UserSignUpScreenState();
@@ -56,7 +56,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         style: GlobalTextStyles.blueBoldText(
                             context: context, fontSize: 32),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         'as cash $value',
                         style: GlobalTextStyles.blueBoldText(
@@ -99,17 +99,17 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                           keyBoardType: TextInputType.name,
                           textController: passwordController),
                       SizedBox(height: GlobalSizes.globalHeight(context, 0.05)),
-                      InkWell(
-                        radius: 10,
-                        onTap: () =>
-                            setState(() => checkBoxState = !checkBoxState),
-                        child: Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          children: [
-                            AnimatedContainer(
+                      Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          InkWell(
+                            radius: 10,
+                            onTap: () =>
+                                setState(() => checkBoxState = !checkBoxState),
+                            child: AnimatedContainer(
                                 duration: const Duration(seconds: 1),
                                 curve: Curves.fastOutSlowIn,
-                                padding: EdgeInsets.all(2),
+                                padding: const EdgeInsets.all(2),
                                 height: 25,
                                 width: 25,
                                 decoration: BoxDecoration(
@@ -125,33 +125,34 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                                     ? SvgPicture.asset(
                                         'assets/images/tick_icon.svg',
                                         height: 15)
-                                    : SizedBox.shrink()),
-                            const SizedBox(width: 20),
-                            RichText(
-                              text: TextSpan(
-                                text: 'I agree with ',
-                                style: GlobalTextStyles.regularText(
-                                    context: context),
-                                children: [
-                                  TextSpan(
-                                      text: 'terms',
-                                      style: GlobalTextStyles.blueBoldText(
-                                          context: context, fontSize: 16)),
-                                  TextSpan(text: ' and '),
-                                  TextSpan(
-                                      text: 'policies',
-                                      style: GlobalTextStyles.blueBoldText(
-                                          context: context, fontSize: 16)),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                                    : const SizedBox.shrink()),
+                          ),
+                          const SizedBox(width: 20),
+                          RichText(
+                            text: TextSpan(
+                              text: 'I agree with ',
+                              style: GlobalTextStyles.regularText(
+                                  context: context),
+                              children: [
+                                TextSpan(
+                                    text: 'terms',
+                                    style: GlobalTextStyles.blueBoldText(
+                                        context: context, fontSize: 16)),
+                                const TextSpan(text: ' and '),
+                                TextSpan(
+                                    text: 'policies',
+                                    style: GlobalTextStyles.blueBoldText(
+                                        context: context, fontSize: 16)),
+                              ],
+                            ),
+                          )
+                        ],
                       ),
                       const SizedBox(height: 30),
                       GlobalButton(
                         buttonText: 'Create account',
                         isButtonColorGreen: true,
+                        isDisabled: !checkBoxState,
                         onTap: () {
                           if (formKey.validate) {
                             if (checkBoxState) {
@@ -177,7 +178,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         borderRadius: BorderRadius.circular(100),
                         child: Center(
                           child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 5),
+                              padding: const EdgeInsets.symmetric(vertical: 5),
                               child: RichText(
                                 text: TextSpan(
                                   text: 'Already have an account? ',
@@ -194,7 +195,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                               )),
                         ),
                       ),
-                      SizedBox(height: 50)
+                      const SizedBox(height: 50)
                     ],
                   ),
                 );

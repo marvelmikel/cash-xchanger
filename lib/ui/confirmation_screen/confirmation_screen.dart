@@ -6,7 +6,6 @@ import 'package:cash_xchanger/navigation/routes.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class ConfirmationScreen extends StatelessWidget {
   const ConfirmationScreen({Key? key, required this.user}) : super(key: key);
