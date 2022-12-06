@@ -3,6 +3,7 @@ import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sizer/sizer.dart';
 
 class OnboardPageItem extends StatefulWidget {
   const OnboardPageItem({
@@ -28,8 +29,7 @@ class _OnboardPageItemState extends State<OnboardPageItem> {
             duration: const Duration(milliseconds: 1000),
             curve: Curves.easeIn,
             child: SizedBox(
-
-                height: 450,
+                height: 60.h,
                 child: SvgPicture.asset('assets/images/${widget.imagePath}',
                     fit: BoxFit.cover)),
           ),
@@ -38,7 +38,7 @@ class _OnboardPageItemState extends State<OnboardPageItem> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 30),
+                SizedBox(height: 2.h),
                 FadeIn(
                   duration: const Duration(milliseconds: 1000),
                   curve: Curves.easeIn,
@@ -47,7 +47,7 @@ class _OnboardPageItemState extends State<OnboardPageItem> {
                     style: GlobalTextStyles.blueBoldText(context: context),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 2.h),
                 FadeIn(
                   duration: const Duration(milliseconds: 1000),
                   curve: Curves.easeIn,

@@ -10,7 +10,6 @@ import '../../cubit/book_cash_cubit/book_cash_cubit.dart';
 class ConfirmDeliveryDialog extends StatelessWidget {
   const ConfirmDeliveryDialog({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Material(

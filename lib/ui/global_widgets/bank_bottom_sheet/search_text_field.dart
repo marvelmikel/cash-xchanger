@@ -16,7 +16,6 @@ class SearchTextField extends StatefulWidget {
       this.maxLength = 35})
       : super(key: key);
 
-
   @override
   State<SearchTextField> createState() => _SearchTextFieldState();
 }

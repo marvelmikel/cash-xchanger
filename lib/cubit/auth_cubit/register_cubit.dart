@@ -34,11 +34,9 @@ class RegisterCubit extends Cubit<RegisterState> {
     //   'role': role
     // };
     // await authApiServiceImpl.signUp(userData: userData, context: context);
-
     getItInstance<NavigationServiceImpl>().navigateTo(
       Routes.verifyEmailPromptScreen,
     );
-
     emit(RegisterState());
   }
 }

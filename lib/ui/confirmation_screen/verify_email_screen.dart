@@ -1,6 +1,7 @@
 import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../helpers/sizes.dart';
 import '../../helpers/text_styles.dart';
@@ -24,7 +25,7 @@ class VerifyEmailPromptScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SvgPicture.asset('assets/images/icon_blue.svg'),
-                  SizedBox(height: GlobalSizes.globalWidth(context, 0.5)),
+                  SizedBox(height: 20.h),
                   Center(
                       child: SvgPicture.asset('assets/images/email_icon.svg')),
                   SizedBox(height: GlobalSizes.globalWidth(context, 0.1)),
@@ -50,6 +51,7 @@ class VerifyEmailPromptScreen extends StatelessWidget {
                     onTap: () => getItInstance<NavigationServiceImpl>()
                         .navigateTo(Routes.verifyEmailScreen),
                   ),
+                  SizedBox(height: GlobalSizes.globalWidth(context, 0.19)),
                 ]),
           ),
         ),

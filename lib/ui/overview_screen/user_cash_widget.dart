@@ -7,7 +7,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 ValueNotifier userType = ValueNotifier('unselected');
 
 class UserCashWidget extends StatelessWidget {
-
   final String activeImage, inActiveImage, title, description;
   final String userRole;
 
@@ -31,7 +30,6 @@ class UserCashWidget extends StatelessWidget {
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(

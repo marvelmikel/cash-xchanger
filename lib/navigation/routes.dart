@@ -10,7 +10,6 @@ class Routes {
   static const String verifyEmailScreen = '/verifyEmailScreen';
   static const String verifyEmailPromptScreen = '/verifyEmailPromptScreen';
 
-
   // User Nav Drawer
   static const String accountInfoScreen = '/accountInfoScreen';
   static const String scheduledTransfers = '/scheduledTransfers';

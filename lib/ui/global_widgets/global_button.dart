@@ -1,6 +1,7 @@
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class GlobalButton extends StatelessWidget {
   const GlobalButton(
@@ -8,7 +9,7 @@ class GlobalButton extends StatelessWidget {
       required this.buttonText,
       this.isButtonColorGreen = false,
       this.horizontalMargin = 0,
-      this.height = 60,
+      this.height = 8,
       this.outLined = false,
       this.isDisabled = false,
       this.forground = Colors.white,
@@ -29,7 +30,7 @@ class GlobalButton extends StatelessWidget {
     return GestureDetector(
       onTap: !isDisabled ? onTap : null,
       child: Container(
-        height: height,
+        height: height.h,
         margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
         alignment: Alignment.center,
         width: GlobalSizes.globalWidth(context, 1),
@@ -82,4 +83,3 @@ class GlobalButton extends StatelessWidget {
     }
   }
 }
-

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../dependency/get_it.dart';
 import '../../helpers/colors.dart';
@@ -24,7 +25,7 @@ class VerifyEmailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 70, left: 20, right: 20),
+                  padding: EdgeInsets.only(top: 7.h, left: 2.h, right: 2.h),
                   child: Text(
                     'Enter pin',
                     textAlign: TextAlign.center,
@@ -32,22 +33,22 @@ class VerifyEmailScreen extends StatelessWidget {
                         context: context, fontSize: 32),
                   ),
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: 3.h),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20,
+                  padding: EdgeInsets.only(
+                    left: 2.h,
                   ),
                   child: Text(
                     'Please enter the 4 digit pin that was sent to your email',
                     style: GlobalTextStyles.regularText(context: context),
                   ),
                 ),
-                const SizedBox(height: 40),
+                SizedBox(height: 3.h),
                 Expanded(
                   child: Container(
                     width: double.infinity,
                     height: double.infinity,
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    padding: EdgeInsets.symmetric(horizontal: 4.h),
                     decoration: BoxDecoration(
                         color: GlobalColors.globalWhite,
                         borderRadius: const BorderRadius.vertical(
@@ -70,7 +71,7 @@ class VerifyEmailScreen extends StatelessWidget {
                                     msg: 'Pin must be 4 digits');
                               }
                             }),
-                        const SizedBox(height: 30)
+                        SizedBox(height: 3.h)
                       ],
                     ),
                   ),

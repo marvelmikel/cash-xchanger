@@ -6,6 +6,7 @@ import 'package:cash_xchanger/navigation/routes.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sizer/sizer.dart';
 
 class ConfirmationScreen extends StatelessWidget {
   const ConfirmationScreen({Key? key, required this.user}) : super(key: key);
@@ -28,7 +29,7 @@ class ConfirmationScreen extends StatelessWidget {
                 Center(
                     child:
                         SvgPicture.asset('assets/images/timeline_three.svg')),
-                SizedBox(height: GlobalSizes.globalWidth(context, 0.3)),
+                SizedBox(height: 10.h),
                 Center(
                     child: SvgPicture.asset(
                         'assets/images/blue_confirmation_icon.svg')),
@@ -38,7 +39,7 @@ class ConfirmationScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GlobalTextStyles.blueMediumText(context: context),
                 ),
-                SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),
+                SizedBox(height: 3.h),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Text(

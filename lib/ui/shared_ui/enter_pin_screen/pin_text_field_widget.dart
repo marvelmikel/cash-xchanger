@@ -1,6 +1,7 @@
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import 'enter_pin_button_widget.dart';
 
@@ -13,7 +14,7 @@ class PinTextField extends StatelessWidget {
         valueListenable: inputText,
         builder: (context, String textValue, child) {
           return Padding(
-            padding: const EdgeInsets.only(top: 50),
+            padding: EdgeInsets.only(top: 5.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -36,8 +37,8 @@ class PinItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60,
-      height: 60,
+      width: 8.h,
+      height: 8.h,
       padding: const EdgeInsets.only(top: 8),
       decoration: BoxDecoration(
           shape: BoxShape.circle,
