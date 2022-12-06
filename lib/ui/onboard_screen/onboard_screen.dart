@@ -1,7 +1,6 @@
 import 'package:cash_xchanger/database/models/onboard_screen_model.dart';
 import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
-import 'package:cash_xchanger/helpers/sizes.dart';
 import 'package:cash_xchanger/navigation/navigation_service.dart';
 import 'package:cash_xchanger/navigation/routes.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';

@@ -83,4 +83,3 @@ class GlobalButton extends StatelessWidget {
     }
   }
 }
-
