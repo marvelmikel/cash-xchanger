@@ -6,6 +6,7 @@ import 'package:cash_xchanger/navigation/navigation_service.dart';
 import 'package:cash_xchanger/navigation/routes.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardScreen extends StatefulWidget {
@@ -36,7 +37,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: GlobalSizes.globalWidth(context, 1.8)),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -51,33 +52,16 @@ class _OnboardScreenState extends State<OnboardScreen> {
                       activeDotColor: GlobalColors.materialPrimaryColor,
                     ),
                   ),
-                  // pageCount == 2
-                  //     ? const SizedBox()
-                  //     : GestureDetector(
-                  //         onTap: () => getItInstance<NavigationServiceImpl>()
-                  //             .navigateTo(Routes.overViewScreen),
-                  //         child: SizedBox(
-                  //           height: 30,
-                  //           width: 80,
-                  //           child: Text(
-                  //             'Continue',
-                  //             style: TextStyle(
-                  //               fontFamily: 'nunito',
-                  //               fontWeight: FontWeight.w600,
-                  //               fontSize:
-                  //                   GlobalSizes.globalWidth(context, 0.04),
-                  //             ),
-                  //           ),
-                  //         ),
-                  //       )
                 ],
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 2.h),
               GlobalButton(
                 buttonText: 'Explore CX',
+                height: 8,
                 onTap: () => getItInstance<NavigationServiceImpl>()
                     .navigateTo(Routes.overViewScreen),
-              )
+              ),
+              SizedBox(height: 2.h),
             ],
           ),
         ),
