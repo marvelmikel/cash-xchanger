@@ -1,4 +1,5 @@
 import 'package:cash_xchanger/cubit/auth_cubit/login_cubit.dart';
+import 'package:cash_xchanger/database/models/auth/login_model.dart';
 import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
@@ -96,9 +97,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () {
                       if (globalKey.validate) {
                         getItInstance<LoginCubit>().login(
-                            email: emailController.text,
-                            password: passwordController.text,
-                            context: context);
+                            context: context,
+                            payload: LoginModel(
+                                email: emailController.text,
+                                password: passwordController.text));
                       }
                     }),
                 SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),
