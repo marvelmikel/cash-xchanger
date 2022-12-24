@@ -1,13 +1,13 @@
 import 'package:cash_xchanger/api_service/auth_api/registration_api.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../database/models/auth/login_model.dart';
 import 'login_api.dart';
 
 abstract class AuthApiService {
   Future<void> login(
-      {required String email,
-      required BuildContext context,
-      required String password});
+      {required LoginModel payload,
+      required BuildContext context});
 
   Future<void> signUp({required userData, required BuildContext context});
 }
@@ -27,10 +27,10 @@ class AuthApiServiceImpl extends AuthApiService {
 
   @override
   Future<void> login(
-      {required String email,
+      {required LoginModel payload,
       required BuildContext context,
-      required String password}) async {
+     }) async {
     loginServiceImpl.userLogin(
-        email: email, password: password, context: context);
+        payload: payload, context: context);
   }
 }

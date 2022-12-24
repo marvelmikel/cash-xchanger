@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 
-const cxHead = 'cx-staging.herokuapp.com';
+const cxHead = 'cashxapp.herokuapp.com';
 final client = http.Client();
 
 const header = {

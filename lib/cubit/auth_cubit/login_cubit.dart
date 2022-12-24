@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../api_service/auth_api/auth_api.dart';
+import '../../database/models/auth/login_model.dart';
 
 class LoginState {
   LoginState();
@@ -13,11 +14,10 @@ class LoginCubit extends Cubit<LoginState> {
   LoginCubit({required this.authApiServiceImpl}) : super(LoginState());
 
   void login(
-      {required String email,
-      required String password,
+      {required LoginModel payload,
       required BuildContext context}) async {
     await authApiServiceImpl.login(
-        email: email, password: password, context: context);
+         context: context, payload: payload);
     emit(LoginState());
   }
 }

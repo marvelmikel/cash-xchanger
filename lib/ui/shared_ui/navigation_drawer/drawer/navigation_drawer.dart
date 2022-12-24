@@ -99,7 +99,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                           Navigator.pop(context);
                           getItInstance<NavigationServiceImpl>().navigateTo(
                               Routes.notificationScreen,
-                              arguments: state.profileModel!.userDetails.email);
+                              arguments:  state.profileModel?.userDetails.email ?? 'john.d2021@yahoo.com');
                         },
                       ),
                       NavMenuItem(

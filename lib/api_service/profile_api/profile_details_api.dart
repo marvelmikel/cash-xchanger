@@ -14,7 +14,7 @@ import '../../ui/vendor/upload_doc/upload_photo_bottomsheet.dart';
 import '../service.dart';
 
 abstract class ProfileDetailsService {
-  Future<bool> profileDetails(
+  Future<ProfileModel?> profileDetails(
       {required String email, required BuildContext context});
 
   Future<void> uploadImage(
@@ -43,19 +43,23 @@ class ProfileDetailsImp extends ProfileDetailsService {
   ProfileDetailsImp({required this.tempDataBaseImpl});
 
   @override
-  Future<bool> profileDetails(
+  Future<ProfileModel?> profileDetails(
       {required String email, required BuildContext context}) async {
     try {
       final uri = Uri.https(cxHead, '/profile/details/$email', {
         'MasterAPIKey': 'Qpieg2eKkXSAU1FCK7agQu2ohaT2YHHiLNHjE4BoQmvhQxIRKkg6F'
       });
+      debugPrint('****** Endpoint path profile ******');
+      debugPrint('****** Request $uri ******');
       _response = await client
           .get(uri, headers: header)
           .timeout(const Duration(seconds: 20), onTimeout: () {
         var errorMessage = 'The connection timed out, please try again';
         throw TimeoutException(errorMessage);
       });
-
+      debugPrint('****** Endpoint done ******');
+      debugPrint('****** response status code ${_response.statusCode}  ******');
+      debugPrint('****** response body  ${_response.body}  ******');
       if (_response.statusCode == 200) {
         var userData = profileModelFromMap(_response.body);
         var userImage = profilePicFromMap(_response.body);
@@ -64,14 +68,14 @@ class ProfileDetailsImp extends ProfileDetailsService {
         tempDataBaseImpl.saveUserImage(userImage: profilePicToMap(userImage));
 
         debugPrint('Success in fetching profile');
-        return true;
+        return userData;
       } else {
         debugPrint('Error in fetching profile');
-        return false;
+        return null;
       }
     } catch (_) {
       debugPrint('Exception in fetching profile');
-      return false;
+      return null;
     }
   }
 

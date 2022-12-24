@@ -94,8 +94,8 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
               return 'Not a valid email';
             }
           } else if (widget.keyBoardType == TextInputType.phone) {
-            if (value.length != 10) {
-              return 'Phone number must be 10 digits';
+            if (value.length != 14) {
+              return 'Phone number must be 14 digits';
             }
           } else if (widget.keyBoardType == TextInputType.name) {
             if (value.length < 3) {
