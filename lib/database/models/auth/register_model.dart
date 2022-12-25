@@ -1,12 +1,13 @@
 class RegisterModel {
   RegisterModel({
-      this.email,
-      this.password,
-      this.firstName,
-      this.username,
-      this.lastName,
-      this.phoneNumber,
-      this.isVendor,});
+    this.email,
+    this.password,
+    this.firstName,
+    this.username,
+    this.lastName,
+    this.phoneNumber,
+    this.isVendor,
+  });
 
   RegisterModel.fromJson(dynamic json) {
     email = json['email'];
@@ -36,5 +37,4 @@ class RegisterModel {
     map['is_vendor'] = isVendor;
     return map;
   }
-
 }

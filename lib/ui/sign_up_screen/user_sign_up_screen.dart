@@ -12,7 +12,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../../cubit/auth_cubit/register_cubit.dart';
 import '../../database/models/auth/register_model.dart';
 import '../overview_screen/user_cash_widget.dart';
+
 final registerEmail = ValueNotifier('');
+
 class UserSignUpScreen extends StatefulWidget {
   const UserSignUpScreen({Key? key}) : super(key: key);
 
@@ -129,22 +131,26 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                                     : const SizedBox.shrink()),
                           ),
                           const SizedBox(width: 20),
-                          RichText(
-                            text: TextSpan(
-                              text: 'I agree with ',
-                              style: GlobalTextStyles.regularText(
-                                  context: context),
-                              children: [
-                                TextSpan(
-                                    text: 'terms',
-                                    style: GlobalTextStyles.blueBoldText(
-                                        context: context, fontSize: 16)),
-                                const TextSpan(text: ' and '),
-                                TextSpan(
-                                    text: 'policies',
-                                    style: GlobalTextStyles.blueBoldText(
-                                        context: context, fontSize: 16)),
-                              ],
+                          InkWell(
+                            onTap: () =>
+                                context.read<RegisterCubit>().privacy(),
+                            child: RichText(
+                              text: TextSpan(
+                                text: 'I agree with ',
+                                style: GlobalTextStyles.regularText(
+                                    context: context),
+                                children: [
+                                  TextSpan(
+                                      text: 'terms',
+                                      style: GlobalTextStyles.blueBoldText(
+                                          context: context, fontSize: 16)),
+                                  const TextSpan(text: ' and '),
+                                  TextSpan(
+                                      text: 'policies',
+                                      style: GlobalTextStyles.blueBoldText(
+                                          context: context, fontSize: 16)),
+                                ],
+                              ),
                             ),
                           )
                         ],

@@ -9,6 +9,7 @@ class Routes {
   static const String vendorWelcomeScreen = '/vendorWelcomeScreen';
   static const String verifyEmailScreen = '/verifyEmailScreen';
   static const String verifyEmailPromptScreen = '/verifyEmailPromptScreen';
+  static const String privacyScreen = '/privacyScreen';
 
   // User Nav Drawer
   static const String accountInfoScreen = '/accountInfoScreen';

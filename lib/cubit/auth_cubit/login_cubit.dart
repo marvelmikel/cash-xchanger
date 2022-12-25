@@ -14,10 +14,8 @@ class LoginCubit extends Cubit<LoginState> {
   LoginCubit({required this.authApiServiceImpl}) : super(LoginState());
 
   void login(
-      {required LoginModel payload,
-      required BuildContext context}) async {
-    await authApiServiceImpl.login(
-         context: context, payload: payload);
+      {required LoginModel payload, required BuildContext context}) async {
+    await authApiServiceImpl.login(context: context, payload: payload);
     emit(LoginState());
   }
 }

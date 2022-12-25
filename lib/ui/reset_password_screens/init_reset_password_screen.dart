@@ -70,11 +70,11 @@ class _InitResetScreenState extends State<InitResetScreen> {
                               borderRadius: BorderRadius.circular(5),
                               border: Border.all(
                                   color:
-                                  GlobalColors.primaryBlack.withAlpha(80),
+                                      GlobalColors.primaryBlack.withAlpha(80),
                                   width: 2)),
                           child: checkBoxState
                               ? SvgPicture.asset('assets/images/tick_icon.svg',
-                              height: 15)
+                                  height: 15)
                               : const SizedBox.shrink()),
                       const SizedBox(width: 20),
                     ],
@@ -118,7 +118,7 @@ class _InitResetScreenState extends State<InitResetScreen> {
                           text: TextSpan(
                             text: 'Don’t have an account? ',
                             style:
-                            GlobalTextStyles.regularText(context: context),
+                                GlobalTextStyles.regularText(context: context),
                             children: [
                               TextSpan(
                                   text: 'Signup',

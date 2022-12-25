@@ -1,11 +1,9 @@
-
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-
 import 'package:cash_xchanger/api_service/profile_api/profile_details_api.dart';
-import 'package:cash_xchanger/database/models/auth/Verify_model.dart';
+import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:cash_xchanger/database/models/profile_model/profile_model.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +18,10 @@ import '../service.dart';
 abstract class RegistrationService {
   Future<void> userReg(
       {required Map<String, dynamic> userData, required BuildContext context});
-  Future<bool>validateOtp({required VerifyModel payload, required BuildContext context});
-  Future<bool>resendOtp({required String email, required BuildContext context});
+  Future<bool> validateOtp(
+      {required VerifyModel payload, required BuildContext context});
+  Future<bool> resendOtp(
+      {required String email, required BuildContext context});
 }
 
 class RegistrationServiceImpl extends RegistrationService {
@@ -41,9 +41,6 @@ class RegistrationServiceImpl extends RegistrationService {
 
     try {
       final uri = Uri.https(cxHead, '/register');
-      debugPrint('****** Endpont hit ******');
-      debugPrint('****** Request $cxHead/register ******');
-      debugPrint('****** Request body $encodeToJson ******');
 
       _response = await client
           .post(uri, body: encodeToJson, headers: header)
@@ -52,11 +49,7 @@ class RegistrationServiceImpl extends RegistrationService {
         Fluttertoast.showToast(msg: errorMessage);
         throw TimeoutException(errorMessage);
       });
-      debugPrint('****** Endpoint done ******');
-      debugPrint('****** response status code ${_response.statusCode}  ******');
-      debugPrint('****** response body  ${_response.body}  ******');
-      if (_response.statusCode ==  HttpStatus.created) {
-        debugPrint('****** Account created calling profile ******');
+      if (_response.statusCode == HttpStatus.created) {
         profileDetailsImp
             .profileDetails(email: userData['email'], context: context)
             .then((profile) {
@@ -64,8 +57,8 @@ class RegistrationServiceImpl extends RegistrationService {
             getItInstance<NavigationServiceImpl>().pop();
             UserDetails userDetails = profile.userDetails;
             userDetails.userRole == 'user'
-                ? getItInstance<NavigationServiceImpl>().navigateTo(
-                    Routes.verifyEmailPromptScreen)
+                ? getItInstance<NavigationServiceImpl>()
+                    .navigateTo(Routes.verifyEmailPromptScreen)
                 : getItInstance<NavigationServiceImpl>().navigateTo(
                     Routes.vendorWelcomeScreen,
                     arguments: [userDetails.username, userDetails.email]);
@@ -78,12 +71,12 @@ class RegistrationServiceImpl extends RegistrationService {
         });
       }
 
-      if (_response.statusCode ==  HttpStatus.ok) {
+      if (_response.statusCode == HttpStatus.ok) {
         getItInstance<NavigationServiceImpl>().pop();
         debugPrint('Account already exist');
         Fluttertoast.showToast(msg: 'Account already exist');
       }
-      if(_response.statusCode == HttpStatus.badRequest){
+      if (_response.statusCode == HttpStatus.badRequest) {
         getItInstance<NavigationServiceImpl>().pop();
         Fluttertoast.showToast(msg: 'Error processing request');
       }
@@ -93,16 +86,14 @@ class RegistrationServiceImpl extends RegistrationService {
       getItInstance<NavigationServiceImpl>().pop();
     }
   }
+
   @override
-  Future<bool>resendOtp({required String email, required BuildContext context})async{
+  Future<bool> resendOtp(
+      {required String email, required BuildContext context}) async {
     var encodeToJson = jsonEncode(email);
     showLoaderDialog(context);
     try {
       final uri = Uri.https(cxHead, '/auth/resend/otp');
-      debugPrint('****** Endpont hit ******');
-      debugPrint('****** Request $cxHead/auth/resend/otp ******');
-      debugPrint('****** Request body $encodeToJson ******');
-
       _response = await client
           .post(uri, body: encodeToJson, headers: header)
           .timeout(const Duration(seconds: 15), onTimeout: () {
@@ -110,28 +101,24 @@ class RegistrationServiceImpl extends RegistrationService {
         Fluttertoast.showToast(msg: errorMessage);
         throw TimeoutException(errorMessage);
       });
-      debugPrint('****** Endpoint done ******');
-      debugPrint('****** response status code ${_response.statusCode}  ******');
-      debugPrint('****** response body  ${_response.body}  ******');
-      if (_response.statusCode ==  HttpStatus.created) {
-        debugPrint('****** OPT Resent ******');
+
+      if (_response.statusCode == HttpStatus.created) {
         getItInstance<NavigationServiceImpl>().pop();
         Fluttertoast.showToast(msg: 'User $email token sent again');
         return true;
       }
 
-      if (_response.statusCode ==  HttpStatus.notFound) {
+      if (_response.statusCode == HttpStatus.notFound) {
         getItInstance<NavigationServiceImpl>().pop();
         debugPrint('Account doesnt already exist');
         Fluttertoast.showToast(msg: 'User $email dose not exist');
         return false;
       }
-      if(_response.statusCode == HttpStatus.unauthorized){
+      if (_response.statusCode == HttpStatus.unauthorized) {
         getItInstance<NavigationServiceImpl>().pop();
         Fluttertoast.showToast(msg: 'Invalid / Expired Otp');
         return false;
-      }
-      else{
+      } else {
         getItInstance<NavigationServiceImpl>().pop();
         Fluttertoast.showToast(msg: 'Something went wrong');
         return false;
@@ -142,22 +129,17 @@ class RegistrationServiceImpl extends RegistrationService {
       getItInstance<NavigationServiceImpl>().pop();
       return false;
     }
-
-
   }
 
   @override
-  Future<bool>validateOtp({required VerifyModel payload, required BuildContext context} ) async {
+  Future<bool> validateOtp(
+      {required VerifyModel payload, required BuildContext context}) async {
     var encodeToJson = jsonEncode(payload.toJson());
 
     showLoaderDialog(context);
 
     try {
       final uri = Uri.https(cxHead, '/auth/verify');
-      debugPrint('****** Endpont hit ******');
-      debugPrint('****** Request $cxHead/auth/verify ******');
-      debugPrint('****** Request body $encodeToJson ******');
-
       _response = await client
           .post(uri, body: encodeToJson, headers: header)
           .timeout(const Duration(seconds: 15), onTimeout: () {
@@ -165,30 +147,24 @@ class RegistrationServiceImpl extends RegistrationService {
         Fluttertoast.showToast(msg: errorMessage);
         throw TimeoutException(errorMessage);
       });
-      debugPrint('****** Endpoint done ******');
-      debugPrint('****** response status code ${_response.statusCode}  ******');
-      debugPrint('****** response body  ${_response.body}  ******');
-      if (_response.statusCode ==  HttpStatus.ok) {
-        debugPrint('****** OPT Verified ******');
+      if (_response.statusCode == HttpStatus.ok) {
         getItInstance<NavigationServiceImpl>().pop();
         getItInstance<NavigationServiceImpl>()
-            .navigateTo(Routes.confirmationScreen,
-            arguments: '');
+            .navigateTo(Routes.confirmationScreen, arguments: '');
         return true;
       }
 
-      if (_response.statusCode ==  HttpStatus.notFound) {
+      if (_response.statusCode == HttpStatus.notFound) {
         getItInstance<NavigationServiceImpl>().pop();
         debugPrint('Account already exist');
         Fluttertoast.showToast(msg: 'User with Email dose not exist');
         return false;
       }
-      if(_response.statusCode == HttpStatus.unauthorized){
+      if (_response.statusCode == HttpStatus.unauthorized) {
         getItInstance<NavigationServiceImpl>().pop();
         Fluttertoast.showToast(msg: 'Invalid / Expired Otp');
         return false;
-      }
-      else{
+      } else {
         getItInstance<NavigationServiceImpl>().pop();
 
         Fluttertoast.showToast(msg: 'Something went wrong');

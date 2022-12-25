@@ -7,15 +7,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
 
-
 import '../../dependency/get_it.dart';
 import '../../helpers/helpers.dart';
 import '../service.dart';
 
 abstract class ResetApiService {
-  Future<void> intReset(
-      {required String email, required BuildContext context});
-  Future<void> resetPassword({required String password, required String confirmPassword, required BuildContext context});
+  Future<void> intReset({required String email, required BuildContext context});
+  Future<void> resetPassword(
+      {required String password,
+      required String confirmPassword,
+      required BuildContext context});
 }
 
 class ResetServiceImpl extends ResetApiService {
@@ -29,7 +30,8 @@ class ResetServiceImpl extends ResetApiService {
     showLoaderDialog(context);
 
     var encodeToJson = jsonEncode(email);
-///fecom35835@khaxan.com
+
+    ///fecom35835@khaxan.com
     try {
       final uri = Uri.https(cxHead, '/reset');
       _response = await client
@@ -54,7 +56,10 @@ class ResetServiceImpl extends ResetApiService {
   }
 
   @override
-  Future<void> resetPassword({required String password, required String confirmPassword, required BuildContext context}) async {
+  Future<void> resetPassword(
+      {required String password,
+      required String confirmPassword,
+      required BuildContext context}) async {
     showLoaderDialog(context);
 
     var encodeToJson = jsonEncode("email");

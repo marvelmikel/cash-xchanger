@@ -1,7 +1,8 @@
 class VerifyModel {
   VerifyModel({
-      this.email, 
-      this.otp,});
+    this.email,
+    this.otp,
+  });
 
   VerifyModel.fromJson(dynamic json) {
     email = json['email'];
@@ -16,5 +17,4 @@ class VerifyModel {
     map['otp'] = otp;
     return map;
   }
-
 }

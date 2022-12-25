@@ -1,6 +1,6 @@
 import 'package:cash_xchanger/api_service/auth_api/registration_api.dart';
 import 'package:cash_xchanger/api_service/auth_api/reset_api.dart';
-import 'package:cash_xchanger/database/models/auth/Verify_model.dart';
+import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../database/models/auth/login_model.dart';

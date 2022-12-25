@@ -1,14 +1,11 @@
-import 'package:cash_xchanger/database/models/auth/Verify_model.dart';
+import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sizer/sizer.dart';
 import '../../cubit/auth_cubit/register_cubit.dart';
-import '../../dependency/get_it.dart';
 import '../../helpers/colors.dart';
 import '../../helpers/text_styles.dart';
-import '../../navigation/navigation_service.dart';
-import '../../navigation/routes.dart';
 import '../global_widgets/global_button.dart';
 import '../shared_ui/enter_pin_screen/enter_pin_button_widget.dart';
 import '../shared_ui/enter_pin_screen/enter_pin_keypad_buttons.dart';
