@@ -1,5 +1,6 @@
 import 'package:cash_xchanger/api_service/auth_api/registration_api.dart';
 import 'package:cash_xchanger/api_service/auth_api/reset_api.dart';
+import 'package:cash_xchanger/database/models/auth/Verify_model.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../database/models/auth/login_model.dart';
@@ -16,6 +17,10 @@ abstract class AuthApiService {
       {required String password,
       required String confirmPassword,
       required BuildContext context});
+  Future<bool> validateOtp(
+      {required VerifyModel payload, required BuildContext context});
+  Future<bool> resendOtp(
+      {required String email, required BuildContext context});
 }
 
 class AuthApiServiceImpl extends AuthApiService {
@@ -30,17 +35,15 @@ class AuthApiServiceImpl extends AuthApiService {
 
   @override
   Future<void> signUp(
-      {required userData, required BuildContext context}) async {
-    registrationServiceImpl.userReg(userData: userData, context: context);
-  }
+          {required userData, required BuildContext context}) async =>
+      registrationServiceImpl.userReg(userData: userData, context: context);
 
   @override
   Future<void> login({
     required LoginModel payload,
     required BuildContext context,
-  }) async {
-    loginServiceImpl.userLogin(payload: payload, context: context);
-  }
+  }) async =>
+      loginServiceImpl.userLogin(payload: payload, context: context);
 
   @override
   Future<void> initReset(
@@ -56,4 +59,14 @@ class AuthApiServiceImpl extends AuthApiService {
           password: password,
           confirmPassword: confirmPassword,
           context: context);
+
+  @override
+  Future<bool> resendOtp(
+          {required String email, required BuildContext context}) =>
+      registrationServiceImpl.resendOtp(email: email, context: context);
+
+  @override
+  Future<bool> validateOtp(
+          {required VerifyModel payload, required BuildContext context}) =>
+      registrationServiceImpl.validateOtp(payload: payload, context: context);
 }

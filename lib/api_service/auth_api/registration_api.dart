@@ -190,6 +190,7 @@ class RegistrationServiceImpl extends RegistrationService {
       }
       else{
         getItInstance<NavigationServiceImpl>().pop();
+
         Fluttertoast.showToast(msg: 'Something went wrong');
         return false;
       }

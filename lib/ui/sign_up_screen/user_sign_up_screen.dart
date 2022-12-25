@@ -12,7 +12,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../../cubit/auth_cubit/register_cubit.dart';
 import '../../database/models/auth/register_model.dart';
 import '../overview_screen/user_cash_widget.dart';
-
+final registerEmail = ValueNotifier('');
 class UserSignUpScreen extends StatefulWidget {
   const UserSignUpScreen({Key? key}) : super(key: key);
 
@@ -36,7 +36,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
   final passwordController = TextEditingController();
 
   var checkBoxState = false;
-  ValueNotifier registerEmail = ValueNotifier('');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
