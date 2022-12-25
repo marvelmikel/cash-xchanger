@@ -10,6 +10,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../cubit/auth_cubit/register_cubit.dart';
+import '../../database/models/auth/register_model.dart';
 import '../overview_screen/user_cash_widget.dart';
 
 class UserSignUpScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
   final passwordController = TextEditingController();
 
   var checkBoxState = false;
-
+  ValueNotifier registerEmail = ValueNotifier('');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,8 +90,8 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                           textController: emailController),
                       GlobalTextField(
                           fieldName: 'Phone number',
-                          maxLength: 11,
-                          keyBoardType: TextInputType.number,
+                          maxLength: 14,
+                          keyBoardType: TextInputType.phone,
                           textController: phoneNumberController),
                       GlobalTextField(
                           fieldName: 'Password',
@@ -156,14 +157,17 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         onTap: () {
                           if (formKey.validate) {
                             if (checkBoxState) {
+                              registerEmail.value = emailController.text;
                               context.read<RegisterCubit>().register(
-                                  username: userNameController.text,
-                                  firstName: firstNameController.text,
-                                  lastName: lastNameController.text,
-                                  email: emailController.text,
-                                  role: value.toString(),
-                                  phoneNumber: phoneNumberController.text,
-                                  password: passwordController.text,
+                                  payload: RegisterModel(
+                                    username: userNameController.text,
+                                    firstName: firstNameController.text,
+                                    lastName: lastNameController.text,
+                                    email: emailController.text,
+                                    isVendor: value.toString() != 'user',
+                                    phoneNumber: phoneNumberController.text,
+                                    password: passwordController.text,
+                                  ),
                                   context: context);
                             } else {
                               Fluttertoast.showToast(
