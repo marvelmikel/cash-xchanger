@@ -9,7 +9,7 @@ import 'package:cash_xchanger/helpers/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
-
+import '../../database/models/terms_and_conditions/terms.dart';
 import '../../dependency/get_it.dart';
 import '../../navigation/navigation_service.dart';
 import '../../navigation/routes.dart';
@@ -22,6 +22,7 @@ abstract class RegistrationService {
       {required VerifyModel payload, required BuildContext context});
   Future<bool> resendOtp(
       {required String email, required BuildContext context});
+  Future<TermsModel?> fetchPrivacyPolicy();
 }
 
 class RegistrationServiceImpl extends RegistrationService {
@@ -175,6 +176,37 @@ class RegistrationServiceImpl extends RegistrationService {
       Fluttertoast.showToast(msg: _.toString());
       getItInstance<NavigationServiceImpl>().pop();
       return false;
+    }
+  }
+
+  @override
+  Future<TermsModel?> fetchPrivacyPolicy(
+     ) async {
+
+    try {
+      debugPrint('Api call for privacy hit');
+      final uri = Uri.https(cxHead, '/terms');
+      _response = await client
+          .get(uri, headers: header)
+          .timeout(const Duration(seconds: 15), onTimeout: () {
+        var errorMessage = 'The connection timed out, please try again';
+        Fluttertoast.showToast(msg: errorMessage);
+        throw TimeoutException(errorMessage);
+      });
+      if (_response.statusCode == HttpStatus.ok) {
+      //  getItInstance<NavigationServiceImpl>().pop();
+        return TermsResponseModel.fromJson(json.decode(_response.body))
+            .termsModel;
+      } else {
+        Fluttertoast.showToast(msg: 'something went wrong');
+       // getItInstance<NavigationServiceImpl>().pop();
+        return null;
+      }
+    } catch (_) {
+      debugPrint(_.toString());
+      Fluttertoast.showToast(msg: _.toString());
+   //   getItInstance<NavigationServiceImpl>().pop();
+      return null;
     }
   }
 }

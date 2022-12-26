@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../api_service/auth_api/auth_api.dart';
 import '../../database/models/auth/register_model.dart';
+
 import '../../navigation/navigation.dart';
 
 class RegisterState {
@@ -16,6 +17,8 @@ class OtpState extends RegisterState {
 class ValidateOtpState extends RegisterState {
   ValidateOtpState();
 }
+
+
 
 class RegisterCubit extends Cubit<RegisterState> {
   AuthApiServiceImpl authApiServiceImpl;
@@ -42,6 +45,9 @@ class RegisterCubit extends Cubit<RegisterState> {
           .validateOtp(payload: payload, context: context)
           .then((value) => emit(ValidateOtpState()));
 
-  privacy() => getItInstance<NavigationServiceImpl>()
-      .navigateTo(Routes.privacyScreen, arguments: '');
+  readPrivacy() {
+    getItInstance<NavigationServiceImpl>()
+        .navigateTo(Routes.privacyScreen, arguments: '');
+  }
+
 }

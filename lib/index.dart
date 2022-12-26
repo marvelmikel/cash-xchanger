@@ -1,4 +1,5 @@
 import 'package:cash_xchanger/cubit/auth_cubit/login_cubit.dart';
+import 'package:cash_xchanger/cubit/auth_cubit/terms_and_condtons_cubit.dart';
 import 'package:cash_xchanger/cubit/nav_bar_cubit/nav_drawer_cubit.dart';
 import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:cash_xchanger/navigation/global_router.dart';
@@ -31,6 +32,7 @@ class _IndexState extends State<Index> {
   late PaymentCubit _paymentCubit;
   late BookCashCubit _bookCashCubit;
   late VendorCubit _vendorCubit;
+  late PrivacyCubit _privacyCubit;
 
   @override
   void initState() {
@@ -41,6 +43,7 @@ class _IndexState extends State<Index> {
     _paymentCubit = getItInstance<PaymentCubit>();
     _bookCashCubit = getItInstance<BookCashCubit>();
     _vendorCubit = getItInstance<VendorCubit>();
+    _privacyCubit = getItInstance<PrivacyCubit>();
     super.initState();
   }
 
@@ -53,6 +56,7 @@ class _IndexState extends State<Index> {
     _paymentCubit.close();
     _bookCashCubit.close();
     _vendorCubit.close();
+    _privacyCubit.close();
     super.dispose();
   }
 
@@ -73,6 +77,9 @@ class _IndexState extends State<Index> {
                   BlocProvider.value(value: _paymentCubit),
                   BlocProvider.value(value: _bookCashCubit),
                   BlocProvider.value(value: _vendorCubit),
+                  BlocProvider<PrivacyCubit>(
+                    create: (BuildContext context) => _privacyCubit,
+                  ),
                 ],
                 child: MaterialApp(
                   title: 'xChanger',

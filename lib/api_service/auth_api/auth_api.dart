@@ -4,6 +4,7 @@ import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../database/models/auth/login_model.dart';
+import '../../database/models/terms_and_conditions/terms.dart';
 import 'login_api.dart';
 
 abstract class AuthApiService {
@@ -21,6 +22,7 @@ abstract class AuthApiService {
       {required VerifyModel payload, required BuildContext context});
   Future<bool> resendOtp(
       {required String email, required BuildContext context});
+  Future<TermsModel?> fetchPrivacyPolicy();
 }
 
 class AuthApiServiceImpl extends AuthApiService {
@@ -69,4 +71,7 @@ class AuthApiServiceImpl extends AuthApiService {
   Future<bool> validateOtp(
           {required VerifyModel payload, required BuildContext context}) =>
       registrationServiceImpl.validateOtp(payload: payload, context: context);
+  @override
+  Future<TermsModel?> fetchPrivacyPolicy() async =>
+      await registrationServiceImpl.fetchPrivacyPolicy();
 }

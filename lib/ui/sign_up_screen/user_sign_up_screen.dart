@@ -133,7 +133,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                           const SizedBox(width: 20),
                           InkWell(
                             onTap: () =>
-                                context.read<RegisterCubit>().privacy(),
+                                context.read<RegisterCubit>().readPrivacy(),
                             child: RichText(
                               text: TextSpan(
                                 text: 'I agree with ',

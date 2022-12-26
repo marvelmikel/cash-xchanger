@@ -31,7 +31,6 @@ class ResetServiceImpl extends ResetApiService {
 
     var encodeToJson = jsonEncode(email);
 
-    ///fecom35835@khaxan.com
     try {
       final uri = Uri.https(cxHead, '/reset');
       _response = await client
@@ -62,7 +61,7 @@ class ResetServiceImpl extends ResetApiService {
       required BuildContext context}) async {
     showLoaderDialog(context);
 
-    var encodeToJson = jsonEncode("email");
+    var encodeToJson = jsonEncode('email');
 
     try {
       final uri = Uri.https(cxHead, '/reset');

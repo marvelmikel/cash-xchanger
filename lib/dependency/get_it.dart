@@ -1,6 +1,7 @@
 import 'package:cash_xchanger/api_service/auth_api/reset_api.dart';
 import 'package:cash_xchanger/api_service/transactions_api/transaction_api.dart';
 import 'package:cash_xchanger/cubit/auth_cubit/reset_cubit.dart';
+import 'package:cash_xchanger/cubit/auth_cubit/terms_and_condtons_cubit.dart';
 import 'package:cash_xchanger/cubit/vendor_cubit/vendor_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -99,6 +100,9 @@ Future initDependencies() async {
 
   getItInstance.registerFactory(
       () => RegisterCubit(authApiServiceImpl: getItInstance()));
+
+  getItInstance.registerFactory(
+          () => PrivacyCubit(authApiServiceImpl: getItInstance()));
 
   getItInstance.registerFactory(() => BookCashCubit(
       tempDataBaseImpl: getItInstance(),

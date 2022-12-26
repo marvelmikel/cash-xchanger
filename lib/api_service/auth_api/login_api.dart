@@ -49,13 +49,13 @@ class LoginServiceImpl extends LoginApiService {
             .then((profile) {
           if (profile != null) {
             getItInstance<NavigationServiceImpl>().pop();
-            debugPrint("${profile}");
+            debugPrint('$profile');
             UserDetails details = profile.userDetails;
             details.userRole == 'user'
                 ? getItInstance<NavigationServiceImpl>().replaceUntil(
                     context: context,
                     routeName: Routes.userDashBoard,
-                    arguments: details.username ?? '',
+                    arguments: details.username,
                   )
                 : details.isDocumentVerified
                     ? getItInstance<NavigationServiceImpl>().replaceUntil(
