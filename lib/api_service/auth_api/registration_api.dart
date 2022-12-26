@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:cash_xchanger/api_service/profile_api/profile_details_api.dart';
-import 'package:cash_xchanger/database/models/auth/Auth_response.dart';
+import 'package:cash_xchanger/database/models/auth/auth_response.dart';
 import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:cash_xchanger/database/models/profile_model/profile_model.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
