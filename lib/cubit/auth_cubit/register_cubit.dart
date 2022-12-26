@@ -18,8 +18,6 @@ class ValidateOtpState extends RegisterState {
   ValidateOtpState();
 }
 
-
-
 class RegisterCubit extends Cubit<RegisterState> {
   AuthApiServiceImpl authApiServiceImpl;
 
@@ -49,5 +47,4 @@ class RegisterCubit extends Cubit<RegisterState> {
     getItInstance<NavigationServiceImpl>()
         .navigateTo(Routes.privacyScreen, arguments: '');
   }
-
 }

@@ -101,8 +101,8 @@ Future initDependencies() async {
   getItInstance.registerFactory(
       () => RegisterCubit(authApiServiceImpl: getItInstance()));
 
-  getItInstance.registerFactory(
-          () => PrivacyCubit(authApiServiceImpl: getItInstance()));
+  getItInstance
+      .registerFactory(() => PrivacyCubit(authApiServiceImpl: getItInstance()));
 
   getItInstance.registerFactory(() => BookCashCubit(
       tempDataBaseImpl: getItInstance(),

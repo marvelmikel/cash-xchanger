@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../database/models/terms_and_conditions/terms.dart';
 
-abstract class PrivacyState{
-
+abstract class PrivacyState {
   PrivacyState();
 }
+
 class PrivacyLoadedState extends PrivacyState {
   PrivacyLoadedState(this.termsModel) : super();
 
@@ -15,11 +15,11 @@ class PrivacyLoadedState extends PrivacyState {
 }
 
 class PrivacyLoadingState extends PrivacyState {
-  PrivacyLoadingState(): super();
+  PrivacyLoadingState() : super();
 }
 
 class PrivacyInitialState extends PrivacyState {
-  PrivacyInitialState(): super();
+  PrivacyInitialState() : super();
 }
 
 class PrivacyErrorState extends PrivacyState {
@@ -28,15 +28,15 @@ class PrivacyErrorState extends PrivacyState {
 
 class PrivacyCubit extends Cubit<PrivacyState> {
   AuthApiServiceImpl authApiServiceImpl;
-  PrivacyCubit({required this.authApiServiceImpl}) : super(PrivacyInitialState());
-   loadPrivacy() async {
+  PrivacyCubit({required this.authApiServiceImpl})
+      : super(PrivacyInitialState());
+  loadPrivacy() async {
     debugPrint('I was hit to make call');
     try {
       emit(PrivacyLoadingState());
-      final data =
-      await authApiServiceImpl.fetchPrivacyPolicy();
-     if (data != null) {
-         emit(PrivacyLoadedState(data));
+      final data = await authApiServiceImpl.fetchPrivacyPolicy();
+      if (data != null) {
+        emit(PrivacyLoadedState(data));
       } else {
         emit(PrivacyErrorState());
       }
@@ -46,4 +46,3 @@ class PrivacyCubit extends Cubit<PrivacyState> {
     }
   }
 }
-

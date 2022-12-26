@@ -180,9 +180,7 @@ class RegistrationServiceImpl extends RegistrationService {
   }
 
   @override
-  Future<TermsModel?> fetchPrivacyPolicy(
-     ) async {
-
+  Future<TermsModel?> fetchPrivacyPolicy() async {
     try {
       debugPrint('Api call for privacy hit');
       final uri = Uri.https(cxHead, '/terms');
@@ -194,18 +192,18 @@ class RegistrationServiceImpl extends RegistrationService {
         throw TimeoutException(errorMessage);
       });
       if (_response.statusCode == HttpStatus.ok) {
-      //  getItInstance<NavigationServiceImpl>().pop();
+        //  getItInstance<NavigationServiceImpl>().pop();
         return TermsResponseModel.fromJson(json.decode(_response.body))
             .termsModel;
       } else {
         Fluttertoast.showToast(msg: 'something went wrong');
-       // getItInstance<NavigationServiceImpl>().pop();
+        // getItInstance<NavigationServiceImpl>().pop();
         return null;
       }
     } catch (_) {
       debugPrint(_.toString());
       Fluttertoast.showToast(msg: _.toString());
-   //   getItInstance<NavigationServiceImpl>().pop();
+      //   getItInstance<NavigationServiceImpl>().pop();
       return null;
     }
   }
