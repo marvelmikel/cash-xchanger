@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:cash_xchanger/api_service/profile_api/profile_details_api.dart';
+import 'package:cash_xchanger/database/models/auth/Auth_response.dart';
 import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:cash_xchanger/database/models/profile_model/profile_model.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
@@ -50,6 +51,7 @@ class RegistrationServiceImpl extends RegistrationService {
         Fluttertoast.showToast(msg: errorMessage);
         throw TimeoutException(errorMessage);
       });
+      AuthReqResponse res = AuthReqResponse.fromJson(json.decode(_response.body));
       if (_response.statusCode == HttpStatus.created) {
         profileDetailsImp
             .profileDetails(email: userData['email'], context: context)
@@ -67,7 +69,8 @@ class RegistrationServiceImpl extends RegistrationService {
           } else {
             getItInstance<NavigationServiceImpl>().pop();
             debugPrint('Registration unsuccessful');
-            Fluttertoast.showToast(msg: 'Registration unsuccessful');
+            Fluttertoast.showToast(msg: res.message!);
+
           }
         });
       }
@@ -75,11 +78,13 @@ class RegistrationServiceImpl extends RegistrationService {
       if (_response.statusCode == HttpStatus.ok) {
         getItInstance<NavigationServiceImpl>().pop();
         debugPrint('Account already exist');
-        Fluttertoast.showToast(msg: 'Account already exist');
+
+        Fluttertoast.showToast(msg: res.message!);
       }
       if (_response.statusCode == HttpStatus.badRequest) {
         getItInstance<NavigationServiceImpl>().pop();
-        Fluttertoast.showToast(msg: 'Error processing request');
+        Fluttertoast.showToast(msg: res.message!);
+
       }
     } catch (_) {
       debugPrint(_.toString());
