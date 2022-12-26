@@ -51,7 +51,8 @@ class RegistrationServiceImpl extends RegistrationService {
         Fluttertoast.showToast(msg: errorMessage);
         throw TimeoutException(errorMessage);
       });
-      AuthReqResponse res = AuthReqResponse.fromJson(json.decode(_response.body));
+      AuthReqResponse res =
+          AuthReqResponse.fromJson(json.decode(_response.body));
       if (_response.statusCode == HttpStatus.created) {
         profileDetailsImp
             .profileDetails(email: userData['email'], context: context)
@@ -70,7 +71,6 @@ class RegistrationServiceImpl extends RegistrationService {
             getItInstance<NavigationServiceImpl>().pop();
             debugPrint('Registration unsuccessful');
             Fluttertoast.showToast(msg: res.message!);
-
           }
         });
       }
@@ -84,7 +84,6 @@ class RegistrationServiceImpl extends RegistrationService {
       if (_response.statusCode == HttpStatus.badRequest) {
         getItInstance<NavigationServiceImpl>().pop();
         Fluttertoast.showToast(msg: res.message!);
-
       }
     } catch (_) {
       debugPrint(_.toString());

@@ -1,13 +1,13 @@
-
-
 class AuthReqResponse {
   AuthReqResponse({
-      this.authResponse, 
-      this.message, 
-      this.statusCode,});
+    this.authResponse,
+    this.message,
+    this.statusCode,
+  });
 
   AuthReqResponse.fromJson(dynamic json) {
-    authResponse = json['data'] != null ? AuthResponse.fromJson(json['data']) : null;
+    authResponse =
+        json['data'] != null ? AuthResponse.fromJson(json['data']) : null;
     message = json['message'];
     statusCode = json['statusCode'];
   }
@@ -24,12 +24,12 @@ class AuthReqResponse {
     map['statusCode'] = statusCode;
     return map;
   }
-
 }
 
 class AuthResponse {
   AuthResponse({
-    this.status,});
+    this.status,
+  });
 
   AuthResponse.fromJson(dynamic json) {
     status = json['status'];
@@ -41,5 +41,4 @@ class AuthResponse {
     map['status'] = status;
     return map;
   }
-
 }
