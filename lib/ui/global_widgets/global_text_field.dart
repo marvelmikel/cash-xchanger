@@ -19,7 +19,7 @@ class GlobalTextField extends StatefulWidget {
       required this.fieldName,
       required this.keyBoardType,
       required this.textController,
-        this.hintText = '',
+      this.hintText = '',
       this.removeSpace = true,
       this.obscureText = false,
       this.isCenterText = false,
