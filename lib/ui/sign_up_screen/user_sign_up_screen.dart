@@ -26,11 +26,6 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   final userNameController = TextEditingController();
-
-  final lastNameController = TextEditingController();
-
-  final firstNameController = TextEditingController();
-
   final emailController = TextEditingController();
 
   final phoneNumberController = TextEditingController();
@@ -75,14 +70,6 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         style: GlobalTextStyles.regularText(context: context),
                       ),
                       GlobalTextField(
-                          fieldName: 'First name',
-                          keyBoardType: TextInputType.name,
-                          textController: firstNameController),
-                      GlobalTextField(
-                          fieldName: 'Last name',
-                          keyBoardType: TextInputType.name,
-                          textController: lastNameController),
-                      GlobalTextField(
                           fieldName: 'Profile name',
                           keyBoardType: TextInputType.text,
                           textController: userNameController),
@@ -93,6 +80,7 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                       GlobalTextField(
                           fieldName: 'Phone number',
                           maxLength: 14,
+                          hintText: 'ex +2348103456789',
                           keyBoardType: TextInputType.phone,
                           textController: phoneNumberController),
                       GlobalTextField(
@@ -167,8 +155,6 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                               context.read<RegisterCubit>().register(
                                   payload: RegisterModel(
                                     username: userNameController.text,
-                                    firstName: firstNameController.text,
-                                    lastName: lastNameController.text,
                                     email: emailController.text,
                                     isVendor: value.toString() != 'user',
                                     phoneNumber: phoneNumberController.text,
