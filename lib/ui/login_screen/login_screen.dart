@@ -7,8 +7,12 @@ import 'package:cash_xchanger/helpers/sizes.dart';
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_text_field.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sizer/sizer.dart';
+
+import '../../navigation/navigation.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -38,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Sign in',
+                Text('Log in',
                     style: GlobalTextStyles.blueBoldText(
                         context: context, fontSize: 32)),
                 SizedBox(height: GlobalSizes.globalWidth(context, 0.17)),
@@ -57,13 +61,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     keyBoardType: TextInputType.name,
                     textController: passwordController),
                 SizedBox(height: GlobalSizes.globalWidth(context, 0.05)),
-                InkWell(
-                  radius: 10,
-                  onTap: () => setState(() => checkBoxState = !checkBoxState),
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      AnimatedContainer(
+                Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    InkWell(
+                      radius: 10,
+                      onTap: () => setState(() => checkBoxState = !checkBoxState),
+                      child: AnimatedContainer(
                           duration: const Duration(seconds: 1),
                           curve: Curves.fastOutSlowIn,
                           padding: const EdgeInsets.all(2),
@@ -82,13 +86,26 @@ class _LoginScreenState extends State<LoginScreen> {
                               ? SvgPicture.asset('assets/images/tick_icon.svg',
                                   height: 15)
                               : const SizedBox.shrink()),
-                      const SizedBox(width: 20),
-                      Text(
+                    ),
+                    const SizedBox(width: 20),
+                    InkWell(
+                      radius: 10,
+                      onTap: () => setState(() => checkBoxState = !checkBoxState),
+                      child: Text(
                         'Remember me',
                         style: GlobalTextStyles.regularText(context: context),
-                      )
-                    ],
-                  ),
+                      ),
+                    ),
+                    SizedBox.fromSize(size: Size(18.w, 0),),
+                    InkWell(
+                      onTap: () => getItInstance<NavigationServiceImpl>()
+                          .navigateTo(Routes.initReset),
+                      child: Text(
+                        'Forgot password',
+                        style: GlobalTextStyles.regularGreenText(context: context),
+                      ),
+                    )
+                  ],
                 ),
                 SizedBox(height: GlobalSizes.globalWidth(context, 0.09)),
                 GlobalButton(

@@ -1,5 +1,6 @@
 import 'package:cash_xchanger/api_service/auth_api/registration_api.dart';
 import 'package:cash_xchanger/api_service/auth_api/reset_api.dart';
+import 'package:cash_xchanger/database/models/auth/reset_model.dart';
 import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -15,8 +16,7 @@ abstract class AuthApiService {
   Future<void> initReset(
       {required String email, required BuildContext context});
   Future<void> resetPassword(
-      {required String password,
-      required String confirmPassword,
+      {required  ResetModel payload,
       required BuildContext context});
   Future<bool> validateOtp(
       {required VerifyModel payload, required BuildContext context});
@@ -54,12 +54,10 @@ class AuthApiServiceImpl extends AuthApiService {
 
   @override
   Future<void> resetPassword(
-          {required String password,
-          required String confirmPassword,
+          {required ResetModel payload,
           required BuildContext context}) =>
       resetApiService.resetPassword(
-          password: password,
-          confirmPassword: confirmPassword,
+          payload: payload,
           context: context);
 
   @override

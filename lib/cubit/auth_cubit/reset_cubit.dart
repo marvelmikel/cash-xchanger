@@ -1,4 +1,5 @@
 import 'package:cash_xchanger/api_service/auth_api/auth_api.dart';
+import 'package:cash_xchanger/database/models/auth/reset_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,11 +18,10 @@ class ResetCubit extends Cubit<ResetState> {
   }
 
   void resetPassword(
-      {required String password,
-      required String confirmPassword,
+      {required ResetModel payload,
       required BuildContext context}) async {
     await authApiServiceImpl.resetPassword(
-        password: password, confirmPassword: confirmPassword, context: context);
+        payload: payload, context: context);
     emit(ResetState());
   }
 }
