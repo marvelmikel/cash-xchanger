@@ -1,20 +1,25 @@
+import 'package:cash_xchanger/database/models/auth/verify_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../dependency/get_it.dart';
+import '../../cubit/auth_cubit/register_cubit.dart';
 import '../../helpers/colors.dart';
 import '../../helpers/text_styles.dart';
-import '../../navigation/navigation_service.dart';
-import '../../navigation/routes.dart';
+import '../../navigation/navigation.dart';
 import '../global_widgets/global_button.dart';
+import '../reset_password_screens/init_reset_password_screen.dart';
 import '../shared_ui/enter_pin_screen/enter_pin_button_widget.dart';
 import '../shared_ui/enter_pin_screen/enter_pin_keypad_buttons.dart';
 import '../shared_ui/enter_pin_screen/pin_text_field_widget.dart';
+import '../sign_up_screen/user_sign_up_screen.dart';
+
+enum PinType { reset, signup }
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({Key? key}) : super(key: key);
-
+  const VerifyEmailScreen({Key? key, this.pinType = PinType.signup})
+      : super(key: key);
+  final PinType pinType;
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
@@ -58,18 +63,35 @@ class VerifyEmailScreen extends StatelessWidget {
                       children: [
                         const PinTextField(),
                         const EnterPinKeypadButtons(),
-                        GlobalButton(
-                            buttonText: 'Proceed',
-                            isButtonColorGreen: true,
-                            onTap: () {
-                              if (value.length == 4) {
-                                getItInstance<NavigationServiceImpl>()
-                                    .navigateTo(Routes.confirmationScreen,
-                                        arguments: '');
-                              } else {
-                                Fluttertoast.showToast(
-                                    msg: 'Pin must be 4 digits');
-                              }
+                        ValueListenableBuilder(
+                            valueListenable: registerEmail,
+                            builder: (context, String emailValue, child) {
+                              return GlobalButton(
+                                  buttonText: 'Proceed',
+                                  isButtonColorGreen: true,
+                                  onTap: () {
+                                    if (value.length == 4) {
+                                      if (pinType == PinType.signup) {
+                                        context
+                                            .read<RegisterCubit>()
+                                            .validateOtp(
+                                                payload: VerifyModel(
+                                                    otp: value,
+                                                    email: emailValue),
+                                                context: context)
+                                            .then((value) =>
+                                                inputText.value = '');
+                                      } else {
+                                        resetModelListener.value.otp = value;
+                                        inputText.value = '';
+                                        getItInstance<NavigationServiceImpl>()
+                                            .navigateTo(Routes.passwordRest);
+                                      }
+                                    } else {
+                                      Fluttertoast.showToast(
+                                          msg: 'Pin must be 4 digits');
+                                    }
+                                  });
                             }),
                         SizedBox(height: 3.h)
                       ],

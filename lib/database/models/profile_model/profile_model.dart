@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final profileModel = profileModelFromMap(jsonString);
-
 import 'dart:convert';
 
 ProfileModel profileModelFromMap(String str) =>
@@ -65,7 +61,7 @@ class UserDetails {
         lastName: json['last_name'] ?? '',
         phoneNumber: json['phone_number'] ?? '',
         userRole: json['user_role'] ?? '',
-        username: json['username'] ?? '',
+        username: json['profile_name'] ?? '',
       );
 
   Map<String, dynamic> toMap() => {
@@ -78,7 +74,7 @@ class UserDetails {
         'last_name': lastName,
         'phone_number': phoneNumber,
         'user_role': userRole,
-        'username': username,
+        'profile_name': username,
       };
 }
 

@@ -2,11 +2,13 @@ import 'package:cash_xchanger/navigation/routes.dart';
 import 'package:cash_xchanger/ui/login_screen/login_screen.dart';
 import 'package:cash_xchanger/ui/overview_screen/overview_screen.dart';
 import 'package:cash_xchanger/ui/sign_up_screen/user_sign_up_screen.dart';
+import 'package:cash_xchanger/ui/terms_and_conditions/terms_and_conditions_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../home_page.dart';
 import '../ui/confirmation_screen/confirmation_screens.dart';
 import '../ui/helper_screens/success_screen.dart';
+import '../ui/reset_password_screens/reset_screens.dart';
 import '../ui/shared_ui/enter_pin_screen/enter_pin_screen.dart';
 import '../ui/shared_ui/navigation_drawer/account_info/account_info_screen.dart';
 import '../ui/shared_ui/navigation_drawer/notifications/notification_screen.dart';
@@ -68,16 +70,33 @@ class GlobalRouter {
             child: VendorWelcomeScreen(vendorData: settings.arguments),
             type: PageTransitionType.fade,
             settings: settings);
+      case Routes.initReset:
+        return PageTransition(
+            child: const InitResetScreen(),
+            type: PageTransitionType.fade,
+            settings: settings);
+      case Routes.passwordRest:
+        return PageTransition(
+            child: const PasswordReset(),
+            type: PageTransitionType.fade,
+            settings: settings);
 
       case Routes.verifyEmailScreen:
+        PinType args = settings.arguments as PinType;
         return PageTransition(
-            child: const VerifyEmailScreen(),
+            child: VerifyEmailScreen(pinType: args),
             type: PageTransitionType.fade,
             settings: settings);
 
       case Routes.verifyEmailPromptScreen:
         return PageTransition(
             child: const VerifyEmailPromptScreen(),
+            type: PageTransitionType.fade,
+            settings: settings);
+
+      case Routes.privacyScreen:
+        return PageTransition(
+            child: const TermsAndConditionsScreen(),
             type: PageTransitionType.fade,
             settings: settings);
       // Vendor screen

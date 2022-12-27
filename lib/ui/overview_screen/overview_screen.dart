@@ -8,7 +8,8 @@ import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:cash_xchanger/ui/overview_screen/user_cash_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../cubit/auth_cubit/terms_and_condtons_cubit.dart';
 import '../../helpers/colors.dart';
 
 class OverviewScreen extends StatelessWidget {
@@ -71,8 +72,11 @@ class OverviewScreen extends StatelessWidget {
                             buttonText: 'Sign up',
                             isButtonColorGreen: true,
                             isDisabled: userType.value == 'unselected',
-                            onTap: () => getItInstance<NavigationServiceImpl>()
-                                .navigateTo(Routes.signUpScreen));
+                            onTap: () {
+                              context.read<PrivacyCubit>().loadPrivacy();
+                              getItInstance<NavigationServiceImpl>()
+                                  .navigateTo(Routes.signUpScreen);
+                            });
                       },
                     ),
                     SizedBox(height: GlobalSizes.globalWidth(context, 0.04)),

@@ -10,7 +10,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
-void showLoaderDialog(BuildContext context) {
+showLoaderDialog(BuildContext context) {
   AlertDialog alert = AlertDialog(
     content: Row(
       children: [

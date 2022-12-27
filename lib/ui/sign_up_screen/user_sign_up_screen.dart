@@ -10,7 +10,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../cubit/auth_cubit/register_cubit.dart';
+import '../../database/models/auth/register_model.dart';
 import '../overview_screen/user_cash_widget.dart';
+
+final registerEmail = ValueNotifier('');
 
 class UserSignUpScreen extends StatefulWidget {
   const UserSignUpScreen({Key? key}) : super(key: key);
@@ -23,11 +26,6 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   final userNameController = TextEditingController();
-
-  final lastNameController = TextEditingController();
-
-  final firstNameController = TextEditingController();
-
   final emailController = TextEditingController();
 
   final phoneNumberController = TextEditingController();
@@ -72,14 +70,6 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         style: GlobalTextStyles.regularText(context: context),
                       ),
                       GlobalTextField(
-                          fieldName: 'First name',
-                          keyBoardType: TextInputType.name,
-                          textController: firstNameController),
-                      GlobalTextField(
-                          fieldName: 'Last name',
-                          keyBoardType: TextInputType.name,
-                          textController: lastNameController),
-                      GlobalTextField(
                           fieldName: 'Profile name',
                           keyBoardType: TextInputType.text,
                           textController: userNameController),
@@ -89,8 +79,9 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                           textController: emailController),
                       GlobalTextField(
                           fieldName: 'Phone number',
-                          maxLength: 11,
-                          keyBoardType: TextInputType.number,
+                          maxLength: 14,
+                          hintText: 'ex +2348103456789',
+                          keyBoardType: TextInputType.phone,
                           textController: phoneNumberController),
                       GlobalTextField(
                           fieldName: 'Password',
@@ -128,22 +119,26 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                                     : const SizedBox.shrink()),
                           ),
                           const SizedBox(width: 20),
-                          RichText(
-                            text: TextSpan(
-                              text: 'I agree with ',
-                              style: GlobalTextStyles.regularText(
-                                  context: context),
-                              children: [
-                                TextSpan(
-                                    text: 'terms',
-                                    style: GlobalTextStyles.blueBoldText(
-                                        context: context, fontSize: 16)),
-                                const TextSpan(text: ' and '),
-                                TextSpan(
-                                    text: 'policies',
-                                    style: GlobalTextStyles.blueBoldText(
-                                        context: context, fontSize: 16)),
-                              ],
+                          InkWell(
+                            onTap: () =>
+                                context.read<RegisterCubit>().readPrivacy(),
+                            child: RichText(
+                              text: TextSpan(
+                                text: 'I agree with ',
+                                style: GlobalTextStyles.regularText(
+                                    context: context),
+                                children: [
+                                  TextSpan(
+                                      text: 'terms',
+                                      style: GlobalTextStyles.blueBoldText(
+                                          context: context, fontSize: 16)),
+                                  const TextSpan(text: ' and '),
+                                  TextSpan(
+                                      text: 'policies',
+                                      style: GlobalTextStyles.blueBoldText(
+                                          context: context, fontSize: 16)),
+                                ],
+                              ),
                             ),
                           )
                         ],
@@ -156,14 +151,15 @@ class _UserSignUpScreenState extends State<UserSignUpScreen> {
                         onTap: () {
                           if (formKey.validate) {
                             if (checkBoxState) {
+                              registerEmail.value = emailController.text;
                               context.read<RegisterCubit>().register(
-                                  username: userNameController.text,
-                                  firstName: firstNameController.text,
-                                  lastName: lastNameController.text,
-                                  email: emailController.text,
-                                  role: value.toString(),
-                                  phoneNumber: phoneNumberController.text,
-                                  password: passwordController.text,
+                                  payload: RegisterModel(
+                                    username: userNameController.text,
+                                    email: emailController.text,
+                                    isVendor: value.toString() != 'user',
+                                    phoneNumber: phoneNumberController.text,
+                                    password: passwordController.text,
+                                  ),
                                   context: context);
                             } else {
                               Fluttertoast.showToast(

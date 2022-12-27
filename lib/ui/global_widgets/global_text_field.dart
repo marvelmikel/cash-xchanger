@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 class GlobalTextField extends StatefulWidget {
   final String fieldName;
+  final String hintText;
   final TextInputType keyBoardType;
   final TextEditingController textController;
   final int maxLength;
@@ -18,6 +19,7 @@ class GlobalTextField extends StatefulWidget {
       required this.fieldName,
       required this.keyBoardType,
       required this.textController,
+      this.hintText = '',
       this.removeSpace = true,
       this.obscureText = false,
       this.isCenterText = false,
@@ -56,6 +58,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
         ),
         decoration: InputDecoration(
           labelText: widget.fieldName,
+          hintText: widget.hintText,
           floatingLabelStyle: TextStyle(color: GlobalColors.purpleBlue),
           isDense: true,
           contentPadding:
@@ -94,8 +97,8 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
               return 'Not a valid email';
             }
           } else if (widget.keyBoardType == TextInputType.phone) {
-            if (value.length != 10) {
-              return 'Phone number must be 10 digits';
+            if (value.length != 14) {
+              return 'Phone number must be 14 digits';
             }
           } else if (widget.keyBoardType == TextInputType.name) {
             if (value.length < 3) {
