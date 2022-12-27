@@ -10,7 +10,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
 
 import '../../database/models/auth/auth_response.dart';
-import '../../dependency/get_it.dart';
 import '../../helpers/helpers.dart';
 import '../../navigation/navigation.dart';
 import '../service.dart';

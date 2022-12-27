@@ -18,10 +18,8 @@ class ResetCubit extends Cubit<ResetState> {
   }
 
   void resetPassword(
-      {required ResetModel payload,
-      required BuildContext context}) async {
-    await authApiServiceImpl.resetPassword(
-        payload: payload, context: context);
+      {required ResetModel payload, required BuildContext context}) async {
+    await authApiServiceImpl.resetPassword(payload: payload, context: context);
     emit(ResetState());
   }
 }

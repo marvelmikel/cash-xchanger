@@ -1,13 +1,11 @@
 import 'package:cash_xchanger/cubit/auth_cubit/login_cubit.dart';
 import 'package:cash_xchanger/database/models/auth/login_model.dart';
-import 'package:cash_xchanger/dependency/get_it.dart';
 import 'package:cash_xchanger/helpers/colors.dart';
 import 'package:cash_xchanger/helpers/helpers.dart';
 import 'package:cash_xchanger/helpers/sizes.dart';
 import 'package:cash_xchanger/helpers/text_styles.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_button.dart';
 import 'package:cash_xchanger/ui/global_widgets/global_text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -66,7 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     InkWell(
                       radius: 10,
-                      onTap: () => setState(() => checkBoxState = !checkBoxState),
+                      onTap: () =>
+                          setState(() => checkBoxState = !checkBoxState),
                       child: AnimatedContainer(
                           duration: const Duration(seconds: 1),
                           curve: Curves.fastOutSlowIn,
@@ -90,19 +89,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(width: 20),
                     InkWell(
                       radius: 10,
-                      onTap: () => setState(() => checkBoxState = !checkBoxState),
+                      onTap: () =>
+                          setState(() => checkBoxState = !checkBoxState),
                       child: Text(
                         'Remember me',
                         style: GlobalTextStyles.regularText(context: context),
                       ),
                     ),
-                    SizedBox.fromSize(size: Size(18.w, 0),),
+                    SizedBox.fromSize(
+                      size: Size(18.w, 0),
+                    ),
                     InkWell(
                       onTap: () => getItInstance<NavigationServiceImpl>()
                           .navigateTo(Routes.initReset),
                       child: Text(
                         'Forgot password',
-                        style: GlobalTextStyles.regularGreenText(context: context),
+                        style:
+                            GlobalTextStyles.regularGreenText(context: context),
                       ),
                     )
                   ],

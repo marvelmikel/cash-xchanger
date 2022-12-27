@@ -16,8 +16,7 @@ abstract class AuthApiService {
   Future<void> initReset(
       {required String email, required BuildContext context});
   Future<void> resetPassword(
-      {required  ResetModel payload,
-      required BuildContext context});
+      {required ResetModel payload, required BuildContext context});
   Future<bool> validateOtp(
       {required VerifyModel payload, required BuildContext context});
   Future<bool> resendOtp(
@@ -54,11 +53,8 @@ class AuthApiServiceImpl extends AuthApiService {
 
   @override
   Future<void> resetPassword(
-          {required ResetModel payload,
-          required BuildContext context}) =>
-      resetApiService.resetPassword(
-          payload: payload,
-          context: context);
+          {required ResetModel payload, required BuildContext context}) =>
+      resetApiService.resetPassword(payload: payload, context: context);
 
   @override
   Future<bool> resendOtp(
