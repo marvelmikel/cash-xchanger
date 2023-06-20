@@ -1,0 +1,58 @@
+name: shared
+description: This is the Shared UI across the project.
+version: 1.0.0+1
+publish_to: none
+homepage: ''
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  sizer:
+  go_router: ^4.4.1
+  flutter_riverpod: ^2.0.2
+  smooth_page_indicator:
+  image_picker: ^0.8.4+11
+  flutter_polyline_points: ^1.0.0
+  google_maps_flutter: ^2.2.1
+  cached_network_image:
+  carousel_slider:
+  dropdown_button2: 1.4.0
+  dio:
+  oktoast: ^3.1.5
+  dartz:
+  fade_shimmer: ^2.0.1
+  core:
+    path: ../core
+  network:
+    path: ../network
+  user:
+    path: ../user
+  vendor:
+    path: ../vendor
+  flutter_svg: ^1.1.6
+  flutter_switch: ^0.3.2
+  flutter_fadein: ^2.0.0
+  pin_code_fields: ^7.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+  
+  module:
+    androidX: true
+    androidPackage: com.example.shared
+    iosBundleIdentifier: com.example.shared

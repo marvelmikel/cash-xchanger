@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "888064260899",
+    "project_id": "cash-x-f7ef5",
+    "storage_bucket": "cash-x-f7ef5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888064260899:android:d8ab1a6f1a4f9841ac6a96",
+        "android_client_info": {
+          "package_name": "ng.cashx.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888064260899-d6ke0p3vaqjv9fojh4npmaeq96los663.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ng.cashx.mobile",
+            "certificate_hash": "dcd4d64fe071158f1db7931db829a15d7a7c75f3"
+          }
+        },
+        {
+          "client_id": "888064260899-raajnek9ulqjlk4la1vrl0d95r67ma2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU3Oa1YyoNr8oVMMSrdhwovP_IZxkhfuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888064260899-raajnek9ulqjlk4la1vrl0d95r67ma2n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "888064260899-d5oa93h2narv85vv4aknafpr8gojefd7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ng.cashx.mobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888064260899:android:b27fdb753f67d944ac6a96",
+        "android_client_info": {
+          "package_name": "tech.cashx.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888064260899-qk9i1hbktd8b0140orvq25s2qjvsi15s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.cashx.mobile",
+            "certificate_hash": "dcd4d64fe071158f1db7931db829a15d7a7c75f3"
+          }
+        },
+        {
+          "client_id": "888064260899-raajnek9ulqjlk4la1vrl0d95r67ma2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU3Oa1YyoNr8oVMMSrdhwovP_IZxkhfuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888064260899-raajnek9ulqjlk4la1vrl0d95r67ma2n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "888064260899-d5oa93h2narv85vv4aknafpr8gojefd7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ng.cashx.mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

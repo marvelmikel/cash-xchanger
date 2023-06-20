@@ -1,0 +1,59 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+  desc "Deploy to Firebase app distribution"
+     lane :upload_firebase do
+      begin
+   gradle(task: "assemble",
+   build_type: "Release"
+   )
+   latest_release = firebase_app_distribution_get_latest_release(
+       app: "1:888064260899:android:b27fdb753f67d944ac6a96",
+       firebase_cli_token: "1//03gTcltDg6ArmCgYIARAAGAMSNwF-L9IrzC2fczoAooPIp_s3ERsLMwDaVympJNiQcXg8LXho_j8wB4kTuCueccYzOAGrssRJ1e0",
+     )
+      firebase_app_distribution(
+       groups: "dev-team",
+       release_notes: "Fixing bug in features",
+       android_artifact_type: "APK",
+       apk_path: "../build/app/outputs/flutter-apk/app-release.apk",
+       firebase_cli_path: "/usr/local/bin/firebase",
+       firebase_cli_token: "1//03gTcltDg6ArmCgYIARAAGAMSNwF-L9IrzC2fczoAooPIp_s3ERsLMwDaVympJNiQcXg8LXho_j8wB4kTuCueccYzOAGrssRJ1e0",
+       app: "1:888064260899:android:b27fdb753f67d944ac6a96"
+      )
+      end
+      end
+end

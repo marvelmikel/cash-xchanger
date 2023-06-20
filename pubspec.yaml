@@ -1,0 +1,84 @@
+name: cashx
+description: The easiest way to withdraw your money
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  flutter_native_splash:
+  flutter_launcher_icons: "^0.9.2"
+  google_maps_flutter: ^2.2.1
+  geolocator: 9.0.1
+  geocoding:
+  flutter_polyline_points: ^1.0.0
+  avatar_glow: ^2.0.2
+  random_string:
+  intl:
+  animated_toggle_switch: ^0.6.2
+  image_picker: ^0.8.4+11
+  flutter_svg:  ^1.0.3
+  fade_shimmer: ^2.0.1
+  dio:
+  cached_network_image:
+  circular_countdown_timer:
+  dropdown_button2: 1.4.0
+  shared_preferences:
+    # For Paystack
+  flutter_paystack: ^1.0.5+1
+  dartz:
+  sizer:
+  oktoast: ^3.1.5
+  shared:
+    path: ./shared
+  core:
+    path: ./core
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path: assets/images/new_logo.png
+
+flutter_native_splash:
+  color: "#083F08"
+  image: assets/images/cx_splash_logo.png
+  android: true
+  ios: true
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/
+ 
+  fonts:
+    - family: nunito
+      fonts:
+        - asset: font/nunito_extraLight.ttf
+          weight: 100
+        - asset: font/nunito_light.ttf
+          weight: 200
+        - asset: font/nunito_regular.ttf
+          weight: 300
+        - asset: font/nunito_black.ttf
+          weight: 400
+        - asset: font/nunito_bold.ttf
+          weight: 500
+        - asset: font/nunito_semiBold.ttf
+          weight: 600
+        - asset: font/nunito_extraBold.ttf
+          weight: 700

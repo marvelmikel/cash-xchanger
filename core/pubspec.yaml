@@ -1,0 +1,36 @@
+name: core
+description: This is the core part of the project.
+version: 0.0.1
+homepage: "none"
+publish_to: none
+
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^4.4.1
+  flutter_riverpod: ^2.0.2
+  shared:
+    path: ../shared
+  user:
+    path: ../user
+
+  vendor:
+    path: ../vendor
+  page_transition: ^2.0.9
+  shared_preferences:
+  intl:
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+
